@@ -37,12 +37,13 @@ composer dump autoload
 Thanks for watching this project
 
 If you want to check my other projects, please click on the links below
-Project Name | Uniform Resource Locator | Status
------------- | --------------------------------- | -------------
-Portfolio | http://sphotonkhan.com | Completed
-Apartment Rents | http://sphotonkhan.com/estate | Completed
-Coffee Retailer | http://sphotonkhan.com/E-Commerce2 | Completed
-Cafe | http://sphotonkhan.com/cafe | Completed
-Tech | http://sphotonkhan.com/tech | In Progress
-Gaming | http://sphotonkhan.com/gaming | Beginning
-Attendance | http://sphotonkhan.com/attendance | Beginning
+
+Websites | URL | Status
+--------------- | ---------------------------- | ----------------
+Portfolio | http://sphotonkhan.com/ | Complete 
+Apartment Rents | http://sphotonkhan.com/estate | Complete
+Cafe | http://sphotonkhan.com/cafe | Complete
+Retailer | http://sphotonkhan.com/E-Commerce2 | Complete
+Technology | http://sphotonkhan.com/tech | Incomplete
+Gaming | http://sphotonkhan.com/gaming | Not Even Started
+Attendance | http://sphotonkhan.com/attendance | Not Even Started
