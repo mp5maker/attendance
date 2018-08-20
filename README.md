@@ -37,7 +37,7 @@ composer dump autoload
 Thanks for watching this project
 
 If you want to check my other projects, please click on the links below
-Project Name | Uniform Resource Locator | Status
+Project Name | Uniform Resource Locator          | Status
 ------------ | --------------------------------- | ---------------
 Portfolio | http://sphotonkhan.com | Completed
 Apartment Rents | http://sphotonkhan.com/estate | Completed
