@@ -51,7 +51,7 @@ gulp.task('libraryjs', function(){
 
 // All the CSS Libraries
 var librariescss = [
-    'node_modules/font-awesome/css/font-awesome.min.css',
+    'node_modules/font-awesome/css/font-awesome.css',
 ];
 
 // Concat and Minify all the CSS Libraries
