@@ -3,6 +3,7 @@
         'ngAnimate',
         'ngMessages',
         'ui.router',
+        'pascalprecht.translate',
     ];
     
     angular.module('attendance', modules);

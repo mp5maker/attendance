@@ -8,6 +8,7 @@ npm install angular-ui-router
 npm install angular-messages
 npm install angular-resource
 npm install angular-animate
+npm install angular-translate
 
 **JQuery**
 npm install popper.js@1.14.3

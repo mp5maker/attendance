@@ -42,5 +42,8 @@
     "gulp-watch": "^5.0.1",
     "jquery": "1.9.1",
     "popper.js": "1.14.3"
+  },
+  "dependencies": {
+    "angular-translate": "^2.18.1"
   }
 }

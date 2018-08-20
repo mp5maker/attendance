@@ -25,7 +25,6 @@ gulp.task('js', function(){
     .pipe(gulp.dest('assets'));
 });
 
-
 // All the JavaScript Libraries
 var librariesjs = [
     //Angular Apps
@@ -33,7 +32,8 @@ var librariesjs = [
     'node_modules/angular-animate/angular-animate.js',
     'node_modules/angular-ui-router/release/angular-ui-router.min.js',
     'node_modules/angular-messages/angular-messages.min.js',
-    
+    'node_modules/angular-translate/dist/angular-translate.js',
+
     // jQuery Apps
     'node_modules/jquery/jquery.min.js',
     
