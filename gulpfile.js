@@ -54,6 +54,11 @@ var librariescss = [
     'node_modules/font-awesome/css/font-awesome.css',
 ];
 
+/**
+ * Change the font awesome font location which is 
+ * in node_modules/font-awesome/css/font-awwesome.css
+ * fonts directory are in app folder
+ */
 // Concat and Minify all the CSS Libraries
 gulp.task('librarycss', function(){
     gulp.src(librariescss)
