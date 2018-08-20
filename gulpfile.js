@@ -21,7 +21,7 @@ gulp.task('sass', function(){
 gulp.task('js', function(){
     gulp.src(['app/**/*.js', 'app/*.js'])
     .pipe(concat('main.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('assets'));
 });
 
@@ -31,7 +31,7 @@ var librariesjs = [
     //Angular Apps
     'node_modules/angular/angular.min.js',
     'node_modules/angular-animate/angular-animate.js',
-    'node_modeles/angular-ui-router/release/angular-ui-router.min.js',
+    'node_modules/angular-ui-router/release/angular-ui-router.min.js',
     'node_modules/angular-messages/angular-messages.min.js',
     
     // jQuery Apps
@@ -45,7 +45,7 @@ var librariesjs = [
 gulp.task('libraryjs', function(){
     gulp.src(librariesjs)
     .pipe(concat('libraries.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('assets'));
 });
 

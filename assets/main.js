@@ -1,1 +1,39 @@
-var app=angular.module("myApp",[]);
+(function(){
+    var modules = [
+        'ngAnimate',
+        'ngMessages',
+        'ui.router',
+    ];
+    
+    angular.module('attendance', modules);
+})();
+
+
+(function(){
+    angular.module('attendance')
+    .filter('translate', function(language){
+        return function(word){
+            var language_selected = 'en';
+            console.log(language);
+            if(language[language_selected][word]){
+                return language[language_selected][word];
+            }else{
+                return word;
+            }
+        };
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .constant('language', 
+        {
+            "en": {
+                "AGS_TEXTILES_LIMITED": "AGS Textiles Limited"
+            },
+            
+            "bn": {
+                "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড"
+            }
+        }
+    );
+})();
