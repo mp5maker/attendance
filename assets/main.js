@@ -8,13 +8,26 @@
     angular.module('attendance', modules);
 })();
 
-
+(function(){    
+    angular.module('attendance')
+    .run(function($rootScope){
+        $rootScope.languageSelected = 'bn';
+    });
+})();
 (function(){
     angular.module('attendance')
-    .filter('translate', function(language){
+    .directive('header', function(){
+        return {
+            restrict: "E",
+            templateUrl: "app/templates/header.html"
+        }
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .filter('translate', function($rootScope, language){
         return function(word){
-            var language_selected = 'en';
-            console.log(language);
+            var language_selected = $rootScope.languageSelected;
             if(language[language_selected][word]){
                 return language[language_selected][word];
             }else{
