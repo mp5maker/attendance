@@ -1,8 +1,8 @@
 (function(){
     angular.module('attendance')
-    .filter('translate', function(language){
+    .filter('translate', function($rootScope, language){
         return function(word){
-            var language_selected = 'en';
+            var language_selected = $rootScope.languageSelected;
             console.log(language);
             if(language[language_selected][word]){
                 return language[language_selected][word];
