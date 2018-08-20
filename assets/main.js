@@ -1,1 +1,1 @@
-var app=angular.module("myApp",[]);
+var modules=["ngAnimate","ngMessages","ui.router"],app=angular.module("myApp",modules);
