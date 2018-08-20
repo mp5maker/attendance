@@ -16,6 +16,15 @@
 })();
 (function(){
     angular.module('attendance')
+    .directive('header', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/header.html"
+        };
+    });
+})();
+(function(){
+    angular.module('attendance')
     .filter('translate', function($rootScope, language){
         return function(word){
             var language_selected = $rootScope.languageSelected;
@@ -42,14 +51,4 @@
             }
         }
     );
-})();
-
-(function(){
-    angular.module('attendance')
-    .directive('header', function(){
-        return{
-            restrict: "E",
-            templateUrl: "app/templates/header.html"
-        };
-    });
 })();

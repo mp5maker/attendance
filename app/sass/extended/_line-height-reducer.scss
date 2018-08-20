@@ -1,0 +1,6 @@
+@for $i from 1 through 9{
+    $line_height_reduce: (100 - ($i*10));
+    .line-height-reduce-#{($i*10)}{
+        line-height: percentage($line_height_reduce/100);
+    }
+}

@@ -1,0 +1,6 @@
+@for $i from 1 through 9{
+    $font_size_reduce: (100 - ($i*10));
+    .font-size-reduce-#{($i*10)}{
+        font-size: percentage($font_size_reduce/100);
+    }
+}

@@ -6311,3 +6311,57 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+.font-size-reduce-10 {
+  font-size: 90%; }
+
+.font-size-reduce-20 {
+  font-size: 80%; }
+
+.font-size-reduce-30 {
+  font-size: 70%; }
+
+.font-size-reduce-40 {
+  font-size: 60%; }
+
+.font-size-reduce-50 {
+  font-size: 50%; }
+
+.font-size-reduce-60 {
+  font-size: 40%; }
+
+.font-size-reduce-70 {
+  font-size: 30%; }
+
+.font-size-reduce-80 {
+  font-size: 20%; }
+
+.font-size-reduce-90 {
+  font-size: 10%; }
+
+.line-height-reduce-10 {
+  line-height: 90%; }
+
+.line-height-reduce-20 {
+  line-height: 80%; }
+
+.line-height-reduce-30 {
+  line-height: 70%; }
+
+.line-height-reduce-40 {
+  line-height: 60%; }
+
+.line-height-reduce-50 {
+  line-height: 50%; }
+
+.line-height-reduce-60 {
+  line-height: 40%; }
+
+.line-height-reduce-70 {
+  line-height: 30%; }
+
+.line-height-reduce-80 {
+  line-height: 20%; }
+
+.line-height-reduce-90 {
+  line-height: 10%; }
