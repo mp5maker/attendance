@@ -1,7 +1,9 @@
-var modules = [
-    'ngAnimate',
-    'ngMessages',
-    'ui.router',
-];
-
-var app = angular.module('myApp', modules);
+(function(){
+    var modules = [
+        'ngAnimate',
+        'ngMessages',
+        'ui.router',
+    ];
+    
+    angular.module('attendance', modules);
+})();

@@ -21,7 +21,7 @@ gulp.task('sass', function(){
 gulp.task('js', function(){
     gulp.src(['app/**/*.js', 'app/*.js'])
     .pipe(concat('main.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('assets'));
 });
 
@@ -45,7 +45,7 @@ var librariesjs = [
 gulp.task('libraryjs', function(){
     gulp.src(librariesjs)
     .pipe(concat('libraries.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('assets'));
 });
 
