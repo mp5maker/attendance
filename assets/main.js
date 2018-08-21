@@ -190,47 +190,6 @@
 })();
 (function(){
     angular.module('attendance')
-    .controller('languageSelectorCtrl', function($scope, $translate){
-        $scope.languageEnglish = function () {
-            $scope.$emit('languageChanged', 'en');
-            $translate.use('en')
-        };
-        
-        $scope.languageBengali = function () {
-            $scope.$emit('languageChanged', 'bn');
-            $translate.use('bn');
-        };
-    });
-})();
-(function(){
-    angular.module('attendance')
-    .controller('mainCtrl', function($scope){
-        $scope.theme = 'dark';
-        $scope.language = 'en';
-        $scope.logoSrc = "app/images/logo/logo.png";
-
-        $scope.$on('themeChanged', function($event, message){
-            $scope.theme = message;
-        });
-
-        $scope.$on('languageChanged', function($event, message){
-            $scope.language = message;
-        });
-    });
-})();
-(function () {
-    angular.module('attendance')
-        .controller('themeSelectorCtrl', function ($scope) {
-            $scope.themeDark = function () {
-                $scope.$emit('themeChanged', 'dark');
-            };
-            $scope.themeLight = function () {
-                $scope.$emit('themeChanged', 'light');
-            };
-        });
-})();
-(function(){
-    angular.module('attendance')
     .directive('headerTemplate', function(){
         return{
             restrict: "E",
@@ -266,6 +225,49 @@
             templateUrl: "app/templates/utilities/theme-selector.html"
         }
     });
+})();
+(function(){
+    angular.module('attendance')
+    .controller('languageSelectorCtrl', function($scope, $translate){
+        $scope.languageEnglish = function () {
+            $scope.$emit('languageChanged', 'en');
+            $translate.use('en')
+        };
+        
+        $scope.languageBengali = function () {
+            $scope.$emit('languageChanged', 'bn');
+            $translate.use('bn');
+        };
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .controller('mainCtrl', function($scope){
+        $scope.theme = 'dark';
+        $scope.language = 'en';
+        $scope.logoSrc = "app/images/logo/logo.png";
+        //Testing
+        $scope.random_number = '798345120';
+
+        $scope.$on('themeChanged', function($event, message){
+            $scope.theme = message;
+        });
+
+        $scope.$on('languageChanged', function($event, message){
+            $scope.language = message;
+        });
+    });
+})();
+(function () {
+    angular.module('attendance')
+        .controller('themeSelectorCtrl', function ($scope) {
+            $scope.themeDark = function () {
+                $scope.$emit('themeChanged', 'dark');
+            };
+            $scope.themeLight = function () {
+                $scope.$emit('themeChanged', 'light');
+            };
+        });
 })();
 (function(){
     angular.module('attendance')
