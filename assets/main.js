@@ -13,6 +13,7 @@
     angular.module('attendance')
     .run(function($rootScope, $translate){
         $rootScope.themeSelected = 'dark';
+        $rootScope.logoSrc = "app/images/logo/logo.jpg";
 
         $rootScope.languageEnglish = function(){
             $translate.use('en')
@@ -29,6 +30,7 @@
         $rootScope.themeLight = function(){
             $rootScope.themeSelected = 'light';
         };
+
     });
 })();
 (function(){
@@ -46,12 +48,13 @@
         $translateProvider.useSanitizeValueStrategy('escape');
     });
 })();
+
 (function(){
     angular.module('attendance')
-    .directive('header', function(){
+    .directive('headerTemplate', function(){
         return{
             restrict: "E",
-            templateUrl: "app/templates/header.html"
+            templateUrl: "app/templates/header-template.html"
         };
     });
 })();
@@ -66,10 +69,31 @@
 })();
 (function(){
     angular.module('attendance')
+    .directive('navigatorTemplate', function(){
+        return {
+            restrict: "E",
+            templateUrl: "app/templates/navigator-template.html"
+        }
+    });
+})();
+(function(){
+    angular.module('attendance')
     .directive('themeSelector', function(){
         return{
             restrict: "E",
             templateUrl: "app/templates/theme-selector.html"
+        }
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .directive('toggleSwitch', function(){
+        return{
+            restrict: "E",
+            scope: {
+                
+            },
+            templateUrl: "app/templates/toggle-switch.html" 
         }
     });
 })();

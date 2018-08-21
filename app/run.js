@@ -2,6 +2,7 @@
     angular.module('attendance')
     .run(function($rootScope, $translate){
         $rootScope.themeSelected = 'dark';
+        $rootScope.logoSrc = "app/images/logo/logo.jpg";
 
         $rootScope.languageEnglish = function(){
             $translate.use('en')
@@ -18,5 +19,6 @@
         $rootScope.themeLight = function(){
             $rootScope.themeSelected = 'light';
         };
+
     });
 })();

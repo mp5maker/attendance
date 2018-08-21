@@ -33,12 +33,15 @@ var librariesjs = [
     'node_modules/angular-ui-router/release/angular-ui-router.min.js',
     'node_modules/angular-messages/angular-messages.min.js',
     'node_modules/angular-translate/dist/angular-translate.js',
-
+    
     // jQuery Apps
     'node_modules/jquery/jquery.min.js',
     
     // Popper JS
     'node_modules/popper.js/dist/umd/popper.min.js',
+
+    // Bootstrap JS
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
 ];
 
 // Concat and Minify all the Javascript Libraries

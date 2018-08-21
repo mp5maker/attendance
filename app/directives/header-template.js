@@ -1,9 +1,9 @@
 (function(){
     angular.module('attendance')
-    .directive('header', function(){
+    .directive('headerTemplate', function(){
         return{
             restrict: "E",
-            templateUrl: "app/templates/header.html"
+            templateUrl: "app/templates/header-template.html"
         };
     });
 })();
