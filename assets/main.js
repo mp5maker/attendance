@@ -119,6 +119,16 @@
     angular.module('attendance')
     .config(function($translateProvider){
         $translateProvider.translations('en', {
+            "0": "0",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -142,6 +152,16 @@
             "ATTENDANCE": "Attendance",
         });
         $translateProvider.translations('bn', {
+            "0": "০",
+            "1": "১",
+            "2": "২",
+            "3": "৩",
+            "4": "4",
+            "5": "৫",
+            "6": "৬",
+            "7": "৭",
+            "8": "৮",
+            "9": "৯",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -172,10 +192,12 @@
     angular.module('attendance')
     .controller('languageSelectorCtrl', function($scope, $translate){
         $scope.languageEnglish = function () {
+            $scope.$emit('languageChanged', 'en');
             $translate.use('en')
         };
-
+        
         $scope.languageBengali = function () {
+            $scope.$emit('languageChanged', 'bn');
             $translate.use('bn');
         };
     });
@@ -184,9 +206,15 @@
     angular.module('attendance')
     .controller('mainCtrl', function($scope){
         $scope.theme = 'dark';
+        $scope.language = 'en';
         $scope.logoSrc = "app/images/logo/logo.png";
+
         $scope.$on('themeChanged', function($event, message){
             $scope.theme = message;
+        });
+
+        $scope.$on('languageChanged', function($event, message){
+            $scope.language = message;
         });
     });
 })();
@@ -236,6 +264,20 @@
         return{
             restrict: "E",
             templateUrl: "app/templates/utilities/theme-selector.html"
+        }
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .filter('numberTranslate', function($translate){
+        return function(number, language){
+            language_key = language;
+            var languageTable = $translate.getTranslationTable(language_key);
+            var create_number = "";
+            for(var i = 0; i < number.length; i++){
+                create_number += languageTable[number[i]];
+            }
+            return create_number;
         }
     });
 })();
