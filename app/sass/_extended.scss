@@ -2,4 +2,7 @@
 @import "extended/font-reducer";
 
 // Reduces the line-height by a percentage than it's normal value
-@import "extended/line-height-reducer"
+@import "extended/line-height-reducer";
+
+// Hacky way to toggle the switch with checkbox
+@import "extended/toggle-switch";
