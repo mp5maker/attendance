@@ -11,7 +11,8 @@
 <style>
     .switch{
         width: 60px;
-        height: 34px;   
+        height: 34px;
+        border: 1px solid black;   
     }
 
     .switch input {
@@ -21,6 +22,20 @@
     .slider{
         background-color: #ccc;
         transition: 0.4s;
+    }
+
+    .slider:before{
+        content: "";
+        background-color: white;
+        transition: 0.4s;
+    }
+
+    input:checked + .slider{
+        background-color: blue;
+    }
+
+    input:focus + .slider{
+        box-shadow: 0 2px 2px 0 grey;
     }
     /* .switch {
     position: relative;
