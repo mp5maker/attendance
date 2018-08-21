@@ -1,0 +1,54 @@
+<nav class = 'navbar navbar-expand-sm navbar-dark bg-dark fixed-top mb-5'>
+    <a ui-sref = 'home' ui-sref-active = 'active' class = 'navbar-brand'>
+        <img ng-src = '{{logoSrc}}' width = '100'/>
+    </a>
+    <button type = 'button' class = 'navbar-toggler' data-toggle = 'collapse' data-target = '#navigationCollapse'>
+        <span class = 'navbar-toggler-icon'></span>
+    </button>
+    <div class = 'collapse navbar-collapse' id = 'navigationCollapse'>
+        <ul class = 'navbar-nav mx-auto mr-auto'>
+            <li class = 'nav-item'>
+                <a ui-sref = 'home' ui-sref-active = 'active' class = 'nav-link' translate = "HOME"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'attendance' ui-sref-active = 'active' class = 'nav-link' translate = "ATTENDANCE"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'total-salary' ui-sref-active = 'active' class = 'nav-link' translate = "TOTAL_SALARY"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'management' ui-sref-active = 'active' class = 'nav-link' translate = "MANAGEMENT"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'admin-staff' ui-sref-active = 'active' class = 'nav-link' translate = "ADMIN_STAFF"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'production-staff' ui-sref-active = 'active' class = 'nav-link' translate = "PRODUCTION_STAFF"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'sewing-operator' ui-sref-active = 'active' class = 'nav-link' translate = "SEWING_OPERATOR"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'sewing-helper' ui-sref-active = 'active' class = 'nav-link' translate = "SEWING_HELPER"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'cutting' ui-sref-active = 'active' class = 'nav-link' translate = "CUTTING"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'quality' ui-sref-active = 'active' class = 'nav-link' translate = "QUALITY"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'finishing' ui-sref-active = 'active' class = 'nav-link' translate = "FINISHING"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'loader-cleaner' ui-sref-active = 'active' class = 'nav-link' translate = "LOADER_CLEANER"></a>
+            </li>
+            <li class = 'nav-item'>
+                <a ui-sref = 'settings' ui-sref-active = 'active' class = 'nav-link' translate = "SETTINGS"></a>
+            </li>
+        </ul>
+        <ul class = 'navbar-nav'>
+            <ng-transclude></ng-transclude>
+        </ul>
+    </div>
+</nav>

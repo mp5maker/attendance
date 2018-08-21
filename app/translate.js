@@ -17,8 +17,12 @@
             "LOADER_CLEANER": "Loader Cleaner",
             "ENGLISH": "English",
             "BENGALI": "Bengali",
+            "EN": "EN",
+            "BN": "BN",
             "DARK": "Dark",
-            "LIGHT": "Light"
+            "LIGHT": "Light",
+            "SETTINGS": "Settings",
+            "ATTENDANCE": "Attendance",
         });
         $translateProvider.translations('bn', {
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
@@ -37,7 +41,11 @@
             "ENGLISH": "ইংরেজি",
             "BENGALI": "বাংলা",
             "DARK": "অন্ধকার",
-            "LIGHT": "হালকা"
+            "LIGHT": "হালকা",
+            "EN": "EN",
+            "BN": "BN",
+            "SETTINGS": "সেটিংস",
+            "ATTENDANCE": "উপস্থিতি",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');

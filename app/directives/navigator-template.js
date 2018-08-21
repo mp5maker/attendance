@@ -3,7 +3,8 @@
     .directive('navigatorTemplate', function(){
         return {
             restrict: "E",
-            templateUrl: "app/templates/navigator-template.html"
+            transclude: true, 
+            templateUrl: "app/templates/layouts/navigator-template.html",
         }
     });
 })();

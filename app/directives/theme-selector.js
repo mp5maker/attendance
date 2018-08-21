@@ -3,7 +3,7 @@
     .directive('themeSelector', function(){
         return{
             restrict: "E",
-            templateUrl: "app/templates/theme-selector.html"
+            templateUrl: "app/templates/utilities/theme-selector.html"
         }
     });
 })();

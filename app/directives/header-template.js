@@ -3,7 +3,8 @@
     .directive('headerTemplate', function(){
         return{
             restrict: "E",
-            templateUrl: "app/templates/header-template.html"
+            transclude: true,
+            templateUrl: "app/templates/layouts/header-template.html",
         };
     });
 })();

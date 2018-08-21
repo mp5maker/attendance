@@ -12,11 +12,13 @@
     <script src="assets/libraries.js"></script>
     <script src="assets/main.js"></script>
 </head>
-<body class = '{{themeSelected}}'>
-    <header-template></header-template>
-    <navigator-template></navigator-template>
-    <theme-selector></theme-selector>
-    <language-selector></language-selector>
-    <toggle-switch></toggle-switch>
+<body class = '{{theme}}' ng-controller = 'mainCtrl'>
+    <navigator-template>
+        <language-selector></language-selector>
+    </navigator-template>
+    <header-template>
+        <theme-selector></theme-selector>
+    </header-template>
+    <ui-view></ui-view>
 </body>
 </html>

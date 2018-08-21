@@ -3,7 +3,7 @@
         .directive('languageSelector', function () {
             return {
                 restrict: "E",
-                templateUrl: "app/templates/language-selector.html"
+                templateUrl: "app/templates/utilities/language-selector.html"
             }
         });
 })();
