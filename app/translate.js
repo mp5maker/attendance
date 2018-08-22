@@ -14,6 +14,7 @@
             "9": "9",
             ":": ":",
             "/": "/",
+            ",": ",",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -90,6 +91,13 @@
             "ADVANCED_OTHERS": "Advanced/Others",
             "REVENUE": "Revenue",
             "TOTAL": "Total",
+            "SL_NO": "SL. No:",
+            "SECTION": "Section",
+            "PAYABLE": "Payable",
+            "OVERTIME": "Overtime",
+            "ATTENDANCE_BONUS": "Attendance Bonus",
+            "TOTAL_HOURS": "Total Hours",
+            "TOTAL_PERSONS": "Total Persons",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -104,6 +112,7 @@
             "9": "৯",
             ":": ":",
             "/": "/",
+            ",": ",",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -178,6 +187,13 @@
             "ADVANCED_OTHERS": "অগ্রিম অন্যান্য",
             "REVENUE": "রাজস্ব",
             "TOTAL": "মোট",
+            "SL_NO": "ক্রমিক নং:",
+            "SECTION": "বিভাগ",
+            "PAYABLE": "প্রদেয়",
+            "OVERTIME": "অধিকর্ম",
+            "ATTENDANCE_BONUS": "উপস্থিতি বোনাস",
+            "TOTAL_HOURS": "মোট ঘণ্টা",
+            "TOTAL_PERSONS": "মোট মানুষ",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');

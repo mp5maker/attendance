@@ -131,6 +131,7 @@
             "9": "9",
             ":": ":",
             "/": "/",
+            ",": ",",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -207,6 +208,13 @@
             "ADVANCED_OTHERS": "Advanced/Others",
             "REVENUE": "Revenue",
             "TOTAL": "Total",
+            "SL_NO": "SL. No:",
+            "SECTION": "Section",
+            "PAYABLE": "Payable",
+            "OVERTIME": "Overtime",
+            "ATTENDANCE_BONUS": "Attendance Bonus",
+            "TOTAL_HOURS": "Total Hours",
+            "TOTAL_PERSONS": "Total Persons",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -221,6 +229,7 @@
             "9": "৯",
             ":": ":",
             "/": "/",
+            ",": ",",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -295,10 +304,60 @@
             "ADVANCED_OTHERS": "অগ্রিম অন্যান্য",
             "REVENUE": "রাজস্ব",
             "TOTAL": "মোট",
+            "SL_NO": "ক্রমিক নং:",
+            "SECTION": "বিভাগ",
+            "PAYABLE": "প্রদেয়",
+            "OVERTIME": "অধিকর্ম",
+            "ATTENDANCE_BONUS": "উপস্থিতি বোনাস",
+            "TOTAL_HOURS": "মোট ঘণ্টা",
+            "TOTAL_PERSONS": "মোট মানুষ",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');
     });
+})();
+(function(){
+    angular.module('attendance')
+    .controller('languageSelectorCtrl', function($scope, $translate){
+        $scope.languageEnglish = function () {
+            $scope.$emit('languageChanged', 'en');
+            $translate.use('en')
+        };
+        
+        $scope.languageBengali = function () {
+            $scope.$emit('languageChanged', 'bn');
+            $translate.use('bn');
+        };
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .controller('mainCtrl', function($scope){
+        $scope.theme = 'dark';
+        $scope.language = 'en';
+        $scope.logoSrc = "app/images/logo/logo.png";
+        //Testing
+        $scope.random_number = '798345120';
+
+        $scope.$on('themeChanged', function($event, message){
+            $scope.theme = message;
+        });
+
+        $scope.$on('languageChanged', function($event, message){
+            $scope.language = message;
+        });
+    });
+})();
+(function () {
+    angular.module('attendance')
+        .controller('themeSelectorCtrl', function ($scope) {
+            $scope.themeDark = function () {
+                $scope.$emit('themeChanged', 'dark');
+            };
+            $scope.themeLight = function () {
+                $scope.$emit('themeChanged', 'light');
+            };
+        });
 })();
 (function(){
     angular.module('attendance')
@@ -355,49 +414,6 @@
             templateUrl: "app/templates/utilities/theme-selector.html"
         }
     });
-})();
-(function(){
-    angular.module('attendance')
-    .controller('languageSelectorCtrl', function($scope, $translate){
-        $scope.languageEnglish = function () {
-            $scope.$emit('languageChanged', 'en');
-            $translate.use('en')
-        };
-        
-        $scope.languageBengali = function () {
-            $scope.$emit('languageChanged', 'bn');
-            $translate.use('bn');
-        };
-    });
-})();
-(function(){
-    angular.module('attendance')
-    .controller('mainCtrl', function($scope){
-        $scope.theme = 'dark';
-        $scope.language = 'en';
-        $scope.logoSrc = "app/images/logo/logo.png";
-        //Testing
-        $scope.random_number = '798345120';
-
-        $scope.$on('themeChanged', function($event, message){
-            $scope.theme = message;
-        });
-
-        $scope.$on('languageChanged', function($event, message){
-            $scope.language = message;
-        });
-    });
-})();
-(function () {
-    angular.module('attendance')
-        .controller('themeSelectorCtrl', function ($scope) {
-            $scope.themeDark = function () {
-                $scope.$emit('themeChanged', 'dark');
-            };
-            $scope.themeLight = function () {
-                $scope.$emit('themeChanged', 'light');
-            };
-        });
 })();
 (function(){
     angular.module('attendance')
