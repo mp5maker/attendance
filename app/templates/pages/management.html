@@ -3,7 +3,10 @@
         <div class="col">
             Management
             <print-button></print-button>
-            <salary-distribution-table print-section></salary-distribution-table>
+            <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
+                <i class="fa fa-file-excel-o"></i>
+            </button>
+            <salary-distribution-table print-section table-id='tableId'></salary-distribution-table>
         </div>
     </div>
 </div>

@@ -400,18 +400,30 @@
     "use strict";
     
     angular.module('attendance')
-    .controller('mainCtrl', function($scope){
-        $scope.theme = 'dark';
-        $scope.language = 'en';
-        $scope.logoSrc = "app/images/logo/logo.png";
+        .controller('mainCtrl', function ($scope, excelFactory, $timeout){
+            $scope.theme = 'dark';
+            $scope.language = 'en';
+            $scope.logoSrc = "app/images/logo/logo.png";
 
-        $scope.$on('themeChanged', function($event, message){
-            $scope.theme = message;
-        });
+            $scope.$on('themeChanged', function($event, message){
+                $scope.theme = message;
+            });
 
-        $scope.$on('languageChanged', function($event, message){
-            $scope.language = message;
-        });
+            $scope.$on('languageChanged', function($event, message){
+                $scope.language = message;
+            });
+
+            $scope.exportToExcel = function (tableId, sheetName) {
+                var exportHref = excelFactory.tableToExcel(tableId, sheetName);
+                $timeout(function (){ 
+                    var a = document.createElement('a');
+                    a.href = exportHref;
+                    a.download = sheetName + ".xls";
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                }, 100);
+            }
     });
 })();
 (function () {
@@ -419,7 +431,8 @@
     
     angular.module('attendance')
         .controller('managementCtrl', function ($scope) {
-
+            $scope.tableId = 'management-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
         });
 })();
 
@@ -593,6 +606,9 @@
         .directive('salaryDistributionTable', function () {
             return {
                 restrict: "E",
+                scope: {
+                    "tableId": "=",
+                },
                 templateUrl: "app/templates/table/salary-distribution-table.html"
             }
         });
@@ -608,6 +624,55 @@
         }
     });
 })();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .factory('excelFactory', function ($window) {
+        var uri = 'data:application/vnd.ms-excel;base64,',
+            template = `<html   xmlns:o="urn:schemas-microsoft-com:office:office" 
+                                xmlns:x="urn:schemas-microsoft-com:office:excel" 
+                                xmlns="http://www.w3.org/TR/REC-html40">
+                                <head>
+                                    <!--[if gte mso 9]>
+                                        <xml>
+                                            <x:ExcelWorkbook>
+                                                <x:ExcelWorksheets>
+                                                    <x:ExcelWorksheet>
+                                                        <x:Name>{worksheet}</x:Name>
+                                                        <x:WorksheetOptions>
+                                                            <x:DisplayGridlines/>
+                                                        </x:WorksheetOptions>
+                                                    </x:ExcelWorksheet>
+                                                </x:ExcelWorksheets>
+                                            </x:ExcelWorkbook>
+                                        </xml>
+                                    <![endif]-->
+                                </head>
+                                <body>
+                                    <table>{table}</table>
+                                </body>
+                        </html>`,
+            base64 = function (s) { 
+                return $window.btoa(unescape(encodeURIComponent(s))); 
+            },
+            format = function (s, c) { 
+                return s.replace(/{(\w+)}/g, function (m, p) { 
+                    return c[p]; 
+                }) }
+            ;
+        return {
+            tableToExcel: function (tableId, worksheetName) {
+                var table = $(tableId),
+                    ctx = { worksheet: worksheetName, table: table.html() },
+                    href = uri + base64(format(template, ctx));
+                return href;
+            }
+        };
+    })
+
+})();
+
 (function(){    
     angular.module('attendance')
     .filter('numberTranslate', function($translate){
