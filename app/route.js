@@ -1,4 +1,6 @@
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .config(function($stateProvider, $urlRouterProvider){
         var homeState = {

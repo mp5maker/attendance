@@ -1,4 +1,6 @@
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .controller('mainCtrl', function($scope){
         $scope.theme = 'dark';

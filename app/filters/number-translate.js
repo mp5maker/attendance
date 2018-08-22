@@ -1,4 +1,4 @@
-(function(){
+(function(){    
     angular.module('attendance')
     .filter('numberTranslate', function($translate){
         return function(number, language){

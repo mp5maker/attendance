@@ -1,4 +1,6 @@
 (function(){
+    "use strict";
+    
     var modules = [
         'ngAnimate',
         'ngMessages',
@@ -9,6 +11,8 @@
     angular.module('attendance', modules);
 })();
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .config(function($stateProvider, $urlRouterProvider){
         var homeState = {
@@ -112,10 +116,14 @@
     })
 })();
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .run(function(){});
 })();
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .config(function($translateProvider){
         $translateProvider.translations('en', {
@@ -132,6 +140,7 @@
             ":": ":",
             "/": "/",
             ",": ",",
+            ".": ".",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -230,6 +239,7 @@
             ":": ":",
             "/": "/",
             ",": ",",
+            ".": ".",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -317,6 +327,8 @@
     });
 })();
 (function(){
+    'use strict';
+    
     angular.module('attendance')
     .directive('headerTemplate', function(){
         return{
@@ -327,6 +339,8 @@
     });
 })();
 (function () {
+    'use strict';
+    
     angular.module('attendance')
         .directive('languageSelector', function () {
             return {
@@ -336,6 +350,8 @@
         });
 })();
 (function(){
+    'use strict';
+    
     angular.module('attendance')
     .directive('navigatorTemplate', function(){
         return {
@@ -346,6 +362,8 @@
     });
 })();
 (function(){
+    'use strict';
+    
     angular.module('attendance')
     .directive('overallTable', function(){
         return{
@@ -354,7 +372,38 @@
         }
     });
 })();
+(function(){
+    'use strict';
+    
+    angular.module('attendance')
+    .directive('printButton', function($window){
+        return{
+            restrict: "E",
+            templaterUrl: "app/templates/utilities/print-button.html",
+            link: function(scope, element){
+                scope.printNow = function(){
+                    var div = element[0].querySelector('.print-section');
+                }
+            }
+        }
+    });
+})();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .directive('printSection', function(){
+        return{
+            restrict: "A",
+            link: function(scope, element){
+                element[0].classList.add('print-section');
+            }
+        }
+    });
+})();
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .directive('salaryDistributionTable', function () {
             return {
@@ -364,6 +413,8 @@
         });
 })();
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .directive('themeSelector', function(){
         return{
@@ -373,6 +424,8 @@
     });
 })();
 (function(){
+    'use strict';
+    
     angular.module('attendance')
     .controller('adminStaffCtrl', function($scope){
 
@@ -380,6 +433,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('attendanceCtrl', function ($scope) {
 
@@ -387,6 +442,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('cuttingCtrl', function ($scope) {
 
@@ -394,6 +451,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('finishingCtrl', function ($scope) {
 
@@ -401,6 +460,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('homeCtrl', function ($scope) {
 
@@ -408,6 +469,8 @@
 })();
 
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .controller('languageSelectorCtrl', function($scope, $translate){
         $scope.languageEnglish = function () {
@@ -422,6 +485,8 @@
     });
 })();
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('loaderCleanerCtrl', function ($scope) {
 
@@ -429,6 +494,8 @@
 })();
 
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .controller('mainCtrl', function($scope){
         $scope.theme = 'dark';
@@ -445,6 +512,8 @@
     });
 })();
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('managementCtrl', function ($scope) {
 
@@ -452,6 +521,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('productionStaffCtrl', function ($scope) {
 
@@ -459,6 +530,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('qualityCtrl', function ($scope) {
 
@@ -466,6 +539,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('settingsCtrl', function ($scope) {
 
@@ -473,6 +548,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('sewingHelperCtrl', function ($scope) {
 
@@ -480,6 +557,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('sewingOperatorCtrl', function ($scope) {
 
@@ -487,6 +566,8 @@
 })();
 
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('themeSelectorCtrl', function ($scope) {
             $scope.themeDark = function () {
@@ -498,13 +579,15 @@
         });
 })();
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .controller('totalSalaryCtrl', function ($scope) {
 
         });
 })();
 
-(function(){
+(function(){    
     angular.module('attendance')
     .filter('numberTranslate', function($translate){
         return function(number, language){

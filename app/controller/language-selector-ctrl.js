@@ -1,4 +1,6 @@
 (function(){
+    "use strict";
+    
     angular.module('attendance')
     .controller('languageSelectorCtrl', function($scope, $translate){
         $scope.languageEnglish = function () {

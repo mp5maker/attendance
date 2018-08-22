@@ -1,4 +1,6 @@
 (function () {
+    "use strict";
+    
     angular.module('attendance')
         .directive('salaryDistributionTable', function () {
             return {
