@@ -78,24 +78,35 @@ $dark-lighten-colors: (
 @each $key, $value in $dark-colors{
     .dark{
         .border-#{$key}{
-            border-color: $value !important; }
+        border-color: $value !important; }
 
         .text-#{$key}{
         color: $value !important; }
 
         .bg-#{$key}{
         background-color: $dark-primary !important; }
-    }
-}
 
-@each $key, $value in $dark-darken-colors{
-    .dark{
-        a.text-#{$key}:hover, a.text-#{$key}:focus {
-        color: $value !important; }
-        
-        a.bg-#{$key}:hover, a.bg-#{$key}:focus,
-        button.bg-#{$key}:hover,
-        button.bg-#{$key}:focus {
-        background-color: $value !important; }
-    }
+        .btn-#{$key} {
+            color: #fff;
+            background-color: $value;
+            border-color: $value; }
+            .btn-#{$key}:hover {
+                color: #fff;
+                background-color: $value;
+                border-color: get-dark-darken-color($key); }
+            .btn-#{$key}:focus, .btn-#{$key}.focus {
+                box-shadow: 0 0 0 0.2rem $value }
+            .btn-#{$key}.disabled, .btn-#{$key}:disabled {
+                color: #fff;
+                background-color: get-dark-lighten-color($key);
+                border-color: get-dark-lighten-color($key); }
+            .btn-#{$key}:not(:disabled):not(.disabled):active, .btn-#{$key}:not(:disabled):not(.disabled).active,
+            .show > .btn-#{key}.dropdown-toggle {
+                color: #fff;
+                background-color: get-dark-darken-color($key);
+                border-color: get-dark-darken-color($key); }
+                .btn-#{$key}:not(:disabled):not(.disabled):active:focus, .btn-#{$key}:not(:disabled):not(.disabled).active:focus,
+                .show > .btn-#{$key}.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem $value; }
+        }
 }
