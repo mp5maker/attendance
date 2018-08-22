@@ -1,0 +1,15 @@
+@for $i from 1 through 360{
+    $degree: #{$i}deg;
+    .rotate-#{$i}{
+        -webkit-transform: rotate($degree);
+
+        /* Firefox */
+        -moz-transform: rotate($degree);
+
+        /* IE */
+        -ms-transform: rotate($degree);
+
+        /* Opera */
+        -o-transform: rotate($degree);
+    }
+}

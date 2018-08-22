@@ -8,6 +8,6 @@
             link: function(scope, element){
                 element[0].classList.add('print-section');
             }
-        }
+        };
     });
 })();
