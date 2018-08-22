@@ -15,16 +15,16 @@
                 $scope.language = message;
             });
 
-            $scope.exportToExcel = function (tableId, sheetName) {
+            $scope.exportToExcel = function (tableId, sheetName) { 
                 var exportHref = excelFactory.tableToExcel(tableId, sheetName);
-                $timeout(function (){ 
+                $timeout(function () { 
                     var a = document.createElement('a');
                     a.href = exportHref;
-                    a.download = sheetName + ".xls";
+                    a.download = `${sheetName}.xls`;
                     document.body.appendChild(a);
                     a.click();
                     a.remove();
-                }, 100);
+                }, 100);  
             }
     });
 })();
