@@ -318,6 +318,41 @@
 })();
 (function(){
     angular.module('attendance')
+    .controller('adminStaffCtrl', function($scope){
+
+    });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('attendanceCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('cuttingCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('finishingCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('homeCtrl', function ($scope) {
+
+        });
+})();
+
+(function(){
+    angular.module('attendance')
     .controller('languageSelectorCtrl', function($scope, $translate){
         $scope.languageEnglish = function () {
             $scope.$emit('languageChanged', 'en');
@@ -330,14 +365,19 @@
         };
     });
 })();
+(function () {
+    angular.module('attendance')
+        .controller('loaderCleanerCtrl', function ($scope) {
+
+        });
+})();
+
 (function(){
     angular.module('attendance')
     .controller('mainCtrl', function($scope){
         $scope.theme = 'dark';
         $scope.language = 'en';
         $scope.logoSrc = "app/images/logo/logo.png";
-        //Testing
-        $scope.random_number = '798345120';
 
         $scope.$on('themeChanged', function($event, message){
             $scope.theme = message;
@@ -350,6 +390,48 @@
 })();
 (function () {
     angular.module('attendance')
+        .controller('managementCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('productionStaffCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('qualityCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('settingsCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('sewingHelperCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
+        .controller('sewingOperatorCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    angular.module('attendance')
         .controller('themeSelectorCtrl', function ($scope) {
             $scope.themeDark = function () {
                 $scope.$emit('themeChanged', 'dark');
@@ -359,6 +441,13 @@
             };
         });
 })();
+(function () {
+    angular.module('attendance')
+        .controller('totalSalaryCtrl', function ($scope) {
+
+        });
+})();
+
 (function(){
     angular.module('attendance')
     .directive('headerTemplate', function(){
