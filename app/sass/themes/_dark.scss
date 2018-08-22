@@ -1,4 +1,4 @@
-//First $dark represents the themes Name
+// First $dark represents the themes Name
 // Primary, secondary represents the color
 // Lighten lightens the color
 // Darken darkens the color
@@ -97,27 +97,5 @@ $dark-lighten-colors: (
         button.bg-#{$key}:hover,
         button.bg-#{$key}:focus {
         background-color: $value !important; }
-    }
-}
-
-@each $key, $value in $dark-lighten-colors{
-    .dark{
-        .table-#{$key},
-        .table-#{$key} > th,
-        .table-#{$key} > td {
-        background-color: $dark-primary-lighten; }
-        
-        .table-hover .table-primary:hover {
-            background-color: get-dark-color($key); 
-        }
-        .table-hover .table-primary:hover > td,
-        .table-hover .table-primary:hover > th {
-            background-color: get-dark-color($key); 
-        }
-        .table-active,
-        .table-active > th,
-        .table-active > td {
-            background-color: get-dark-darken-color($key) 
-        }
     }
 }
