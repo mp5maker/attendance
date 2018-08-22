@@ -318,6 +318,62 @@
 })();
 (function(){
     angular.module('attendance')
+    .directive('headerTemplate', function(){
+        return{
+            restrict: "E",
+            transclude: true,
+            templateUrl: "app/templates/layouts/header-template.html",
+        };
+    });
+})();
+(function () {
+    angular.module('attendance')
+        .directive('languageSelector', function () {
+            return {
+                restrict: "E",
+                templateUrl: "app/templates/utilities/language-selector.html"
+            }
+        });
+})();
+(function(){
+    angular.module('attendance')
+    .directive('navigatorTemplate', function(){
+        return {
+            restrict: "E",
+            transclude: true, 
+            templateUrl: "app/templates/layouts/navigator-template.html",
+        }
+    });
+})();
+(function(){
+    angular.module('attendance')
+    .directive('overallTable', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/table/overall-table.html"
+        }
+    });
+})();
+(function () {
+    angular.module('attendance')
+        .directive('salaryDistributionTable', function () {
+            return {
+                restrict: "E",
+                templateUrl: "app/templates/table/salary-distribution-table.html"
+            }
+        });
+})();
+(function(){
+    angular.module('attendance')
+    .directive('themeSelector', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/utilities/theme-selector.html"
+        }
+    });
+})();
+(function(){
+    angular.module('attendance')
     .controller('adminStaffCtrl', function($scope){
 
     });
@@ -448,62 +504,6 @@
         });
 })();
 
-(function(){
-    angular.module('attendance')
-    .directive('headerTemplate', function(){
-        return{
-            restrict: "E",
-            transclude: true,
-            templateUrl: "app/templates/layouts/header-template.html",
-        };
-    });
-})();
-(function () {
-    angular.module('attendance')
-        .directive('languageSelector', function () {
-            return {
-                restrict: "E",
-                templateUrl: "app/templates/utilities/language-selector.html"
-            }
-        });
-})();
-(function(){
-    angular.module('attendance')
-    .directive('navigatorTemplate', function(){
-        return {
-            restrict: "E",
-            transclude: true, 
-            templateUrl: "app/templates/layouts/navigator-template.html",
-        }
-    });
-})();
-(function(){
-    angular.module('attendance')
-    .directive('overallTable', function(){
-        return{
-            restrict: "E",
-            templateUrl: "app/templates/table/overall-table.html"
-        }
-    });
-})();
-(function () {
-    angular.module('attendance')
-        .directive('salaryDistributionTable', function () {
-            return {
-                restrict: "E",
-                templateUrl: "app/templates/table/salary-distribution-table.html"
-            }
-        });
-})();
-(function(){
-    angular.module('attendance')
-    .directive('themeSelector', function(){
-        return{
-            restrict: "E",
-            templateUrl: "app/templates/utilities/theme-selector.html"
-        }
-    });
-})();
 (function(){
     angular.module('attendance')
     .filter('numberTranslate', function($translate){
