@@ -331,7 +331,9 @@
     
     angular.module('attendance')
     .controller('adminStaffCtrl', function($scope){
-
+        $scope.tableId = 'admin-staff-table';
+        $scope.worksheetName = 'management-money-distribution-sheet';
+        $scope.currentPageName = 'ADMIN_STAFF';
     });
 })();
 
@@ -349,8 +351,10 @@
     
     angular.module('attendance')
         .controller('cuttingCtrl', function ($scope) {
-
-        });
+            $scope.tableId = 'cutting-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'CUTTING';
+        }); 
 })();
 
 (function () {
@@ -358,7 +362,9 @@
     
     angular.module('attendance')
         .controller('finishingCtrl', function ($scope) {
-
+            $scope.tableId = 'finishing-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = "FINISHING";
         });
 })();
 
@@ -392,7 +398,9 @@
     
     angular.module('attendance')
         .controller('loaderCleanerCtrl', function ($scope) {
-
+            $scope.tableId = 'loader-cleaner-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = "LOADER_CLEANER";
         });
 })();
 
@@ -433,6 +441,7 @@
         .controller('managementCtrl', function ($scope) {
             $scope.tableId = 'management-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'MANAGEMENT';
         });
 })();
 
@@ -441,7 +450,9 @@
     
     angular.module('attendance')
         .controller('productionStaffCtrl', function ($scope) {
-
+            $scope.tableId = 'production-staff-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = "PRODUCTION_STAFF";
         });
 })();
 
@@ -450,7 +461,9 @@
     
     angular.module('attendance')
         .controller('qualityCtrl', function ($scope) {
-
+            $scope.tableId = 'quality-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'QUALITY';
         });
 })();
 
@@ -468,7 +481,9 @@
     
     angular.module('attendance')
         .controller('sewingHelperCtrl', function ($scope) {
-
+            $scope.tableId = 'sewing-helper-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'SEWING_HELPER';
         });
 })();
 
@@ -477,7 +492,9 @@
     
     angular.module('attendance')
         .controller('sewingOperatorCtrl', function ($scope) {
-
+            $scope.tableId = 'sewing-operator-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'SEWING_OPERATOR';
         });
 })();
 
@@ -609,6 +626,7 @@
                 scope: {
                     "tableId": "=",
                     "language": "=",
+                    "currentPageName": "="
                 },
                 templateUrl: "app/templates/table/salary-distribution-table.html"
             }
