@@ -2,7 +2,11 @@
     <div class="row">
         <div class="col">
             Loader Cleaner
-            <salary-distribution-table></salary-distribution-table>
+            <print-button></print-button>
+            <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
+                <i class="fa fa-file-excel-o"></i>
+            </button>
+            <salary-distribution-table print-section table-id='tableId' language='language'></salary-distribution-table>
         </div>
     </div>
 </div>
