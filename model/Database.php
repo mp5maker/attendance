@@ -83,5 +83,3 @@ class Database{
         self::$handler = null;
     }
 }
-
-Database::createHandler();
