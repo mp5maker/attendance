@@ -9,7 +9,7 @@ class Database{
      * Connection established with the database
      * @return null
      */
-    public static function createHandler(){
+    protected static function createHandler(){
         // Getting the Configuration File
         $root_directory = $_SERVER['DOCUMENT_ROOT'];
         require_once $root_directory."/init.php";
