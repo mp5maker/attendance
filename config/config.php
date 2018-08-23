@@ -4,10 +4,7 @@ namespace Configuration;
 //Defining the app
 $root_directory = $_SERVER['DOCUMENT_ROOT'];
 require_once $root_directory."/init.php";
-
-if(empty($app_name) && !isset($app_name)){
-    $app_name = "attendance";
-}
+$app_name = isset($app_name) ? APP_NAME : "attendance";
 
 // Applying the namespace rule for everyone
 require_once $root_directory."/".$app_name."/vendor/autoload.php";
@@ -20,7 +17,8 @@ define("LIBRARY", $root_directory."/".$app_name."/library");
 define("MODEL", $root_directory."/".$app_name."/model");
 
 //Database
-$db_settings = [
+$db_settings =
+[
     'mysql' => [
         "server" => "localhost",
         "username" => "root",
@@ -28,3 +26,4 @@ $db_settings = [
         "db_name" => "attendance"
     ]
 ];
+define('DB_SETTINGS', $db_settings);
