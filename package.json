@@ -44,6 +44,7 @@
     "popper.js": "1.14.3"
   },
   "dependencies": {
-    "angular-translate": "^2.18.1"
+    "angular-translate": "^2.18.1",
+    "gulp-babel": "^7.0.1"
   }
 }
