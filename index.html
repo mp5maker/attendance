@@ -13,12 +13,34 @@
     <script src="assets/main.js"></script>
 </head>
 <body class = '{{theme}}' ng-controller = 'mainCtrl'>
+    <!-- Contains the navigation bar with language selector -->
     <navigator-template>
         <language-selector></language-selector>
-    </navigator-template>
-    <header-template>
         <theme-selector></theme-selector>
-    </header-template>
-    <ui-view></ui-view>
+    </navigator-template>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="wrapper-sidebar col-md-2 bg-danger d-none d-sm-block" ng-hide = 'sidebarHide'>
+                <!-- Hide all whose screen size is smaller than small -->
+                <sidebar-template></sidebar-template>
+            </div>
+            <!-- Main Content -->
+            <div class="wrapper-content col-md-10" id = "wrapper-content-id">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <!-- Show Header with theme selector -->
+                            <header-template></header-template>
+                            <!-- Main Content -->
+                            <div class = 'mt-3'>
+                                <ui-view></ui-view>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

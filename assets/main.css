@@ -9606,6 +9606,30 @@ a.text-dark:hover, a.text-dark:focus {
   /* Opera */
   -o-transform: rotate(360deg); }
 
+.wrapper-sidebar {
+  height: 100vh;
+  overflow-x: hidden;
+  text-decoration: none;
+  list-style: none; }
+
+.wrapper-sidebar.ng-hide {
+  animation: hide-sidebar linear 0.25s; }
+
+.wrapper-sidebar {
+  animation: show-sidebar linear 0.25s; }
+
+@keyframes hide-sidebar {
+  0% {
+    left: 0; }
+  100% {
+    left: -100%; } }
+
+@keyframes show-sidebar {
+  0% {
+    left: -100%; }
+  100% {
+    left: 0; } }
+
 .dark .border-primary {
   border-color: #263238 !important; }
 
@@ -9650,7 +9674,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #4a148c !important; }
 
 .dark .bg-secondary {
-  background-color: #263238 !important; }
+  background-color: #4a148c !important; }
 
 .dark .btn-secondary {
   color: #fff;
@@ -9687,7 +9711,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #004d40 !important; }
 
 .dark .bg-success {
-  background-color: #263238 !important; }
+  background-color: #004d40 !important; }
 
 .dark .btn-success {
   color: #fff;
@@ -9724,7 +9748,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #006064 !important; }
 
 .dark .bg-info {
-  background-color: #263238 !important; }
+  background-color: #006064 !important; }
 
 .dark .btn-info {
   color: #fff;
@@ -9761,7 +9785,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #fb8c00 !important; }
 
 .dark .bg-warning {
-  background-color: #263238 !important; }
+  background-color: #fb8c00 !important; }
 
 .dark .btn-warning {
   color: #fff;
@@ -9798,7 +9822,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #880e4f !important; }
 
 .dark .bg-danger {
-  background-color: #263238 !important; }
+  background-color: #880e4f !important; }
 
 .dark .btn-danger {
   color: #fff;
@@ -9835,7 +9859,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #000a12 !important; }
 
 .dark .bg-light {
-  background-color: #263238 !important; }
+  background-color: #000a12 !important; }
 
 .dark .btn-light {
   color: #fff;
@@ -9872,7 +9896,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #000a12 !important; }
 
 .dark .bg-dark {
-  background-color: #263238 !important; }
+  background-color: #000a12 !important; }
 
 .dark .btn-dark {
   color: #fff;

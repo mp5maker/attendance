@@ -18,6 +18,10 @@
             "/": "/",
             ",": ",",
             ".": ".",
+            "D": "D",
+            "L": "L",
+            "EN": "EN",
+            "BN": "BN",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -101,6 +105,8 @@
             "ATTENDANCE_BONUS": "Attendance Bonus",
             "TOTAL_HOURS": "Total Hours",
             "TOTAL_PERSONS": "Total Persons",
+            "TRANSLATE": "Translate",
+            "THEME": "Theme",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -117,6 +123,10 @@
             "/": "/",
             ",": ",",
             ".": ".",
+            "D": "ডি",
+            "L": "এল",
+            "EN": "ই",
+            "BN": "বি",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -198,6 +208,8 @@
             "ATTENDANCE_BONUS": "উপস্থিতি বোনাস",
             "TOTAL_HOURS": "মোট ঘণ্টা",
             "TOTAL_PERSONS": "মোট মানুষ",
+            "TRANSLATE": "অনুবাদ",
+            "THEME": "থিম",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');

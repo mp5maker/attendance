@@ -1,0 +1,30 @@
+.wrapper-sidebar{
+    height: 100vh;
+    overflow-x: hidden;
+    text-decoration: none;
+    list-style: none;
+}
+
+.wrapper-sidebar.ng-hide{
+    animation: hide-sidebar linear 0.25s;
+}
+
+.wrapper-sidebar{
+    animation: show-sidebar linear 0.25s;
+}
+
+@keyframes hide-sidebar{
+    0%{
+        left: 0;
+    }100%{
+        left: -100%;
+    }
+}
+
+@keyframes show-sidebar{
+    0%{
+        left: -100%;
+    }100%{
+        left: 0;
+    }
+}

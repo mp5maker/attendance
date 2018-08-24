@@ -5,7 +5,10 @@
     .directive('navigatorTemplate', function(){
         return {
             restrict: "E",
-            transclude: true, 
+            transclude: {
+                'languageSelector': "languageSelector",
+                'themeSelector': "themeSelector",
+            },
             templateUrl: "app/templates/layouts/navigator-template.html",
         }
     });

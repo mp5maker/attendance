@@ -1,12 +1,19 @@
 <nav class = 'navbar navbar-expand-sm navbar-dark bg-dark fixed-top mb-5'>
-    <a ui-sref = 'home' ui-sref-active = 'active' class = 'navbar-brand'>
-        <img ng-src = '{{logoSrc}}'/>
+    <a class = 'navbar-brand navigation-css-transition' ng-click = 'sidebarHide =! sidebarHide; sidebarToggle()'>
+        <img ng-src = '{{logoSrc}}' class = 'd-inline-block'/>
+        <div class="d-inline-block">
+            <span class = 'd-none d-sm-block'>
+                <span class='text-white' translate='AGS_TEXTILES_LIMITED'></span>
+                <span class='text-warning font-size-reduce-40' translate='AGS_TEXTILES_ADDRESS'></span>
+            </span>
+        </div>
     </a>
     <button type = 'button' class = 'navbar-toggler' data-toggle = 'collapse' data-target = '#navigationCollapse'>
         <span class = 'navbar-toggler-icon'></span>
     </button>
     <div class = 'collapse navbar-collapse' id = 'navigationCollapse'>
-        <ul class = 'navbar-nav mx-auto mr-auto'>
+        <!-- Hide this section when the screen size is bigger than small -->
+        <ul class = 'navbar-nav d-sm-none'>
             <li class = 'nav-item'>
                 <a ui-sref = 'home' ui-sref-active = 'active' class = 'nav-link' translate = "HOME"></a>
             </li>
@@ -47,8 +54,10 @@
                 <a ui-sref = 'settings' ui-sref-active = 'active' class = 'nav-link' translate = "SETTINGS"></a>
             </li>
         </ul>
-        <ul class = 'navbar-nav'>
-            <ng-transclude></ng-transclude>
+        <!-- English/Bengaai Translation Option -->
+        <ul class = 'navbar-nav ml-auto'>
+            <language-selector></language-selector>
+            <theme-selector class = 'ml-3'></theme-selector>
         </ul>
     </div>
 </nav>

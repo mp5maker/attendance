@@ -6,6 +6,7 @@
             $scope.theme = 'dark';
             $scope.language = 'en';
             $scope.logoSrc = "app/images/logo/logo.png";
+            $scope.sidebarHide = false;
 
             $scope.$on('themeChanged', function($event, message){
                 $scope.theme = message;
@@ -25,6 +26,20 @@
                     a.click();
                     a.remove();
                 }, 100);  
-            }
+            };
+
+            $scope.sidebarToggle = function(){
+                if($scope.sidebarHide){
+                    //If the sidebar is hidden
+                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
+                    wrapper_content[0].classList.add('col');
+                    wrapper_content[0].classList.remove('col-md-10');
+                }else{
+                    //If the sidebar shows
+                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
+                    wrapper_content[0].classList.add('col-md-10');
+                    wrapper_content[0].classList.remove('col');
+                }
+            };
     });
 })();

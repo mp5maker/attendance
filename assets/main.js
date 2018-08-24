@@ -141,6 +141,10 @@
             "/": "/",
             ",": ",",
             ".": ".",
+            "D": "D",
+            "L": "L",
+            "EN": "EN",
+            "BN": "BN",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -224,6 +228,8 @@
             "ATTENDANCE_BONUS": "Attendance Bonus",
             "TOTAL_HOURS": "Total Hours",
             "TOTAL_PERSONS": "Total Persons",
+            "TRANSLATE": "Translate",
+            "THEME": "Theme",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -240,6 +246,10 @@
             "/": "/",
             ",": ",",
             ".": ".",
+            "D": "ডি",
+            "L": "এল",
+            "EN": "ই",
+            "BN": "বি",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -321,154 +331,13 @@
             "ATTENDANCE_BONUS": "উপস্থিতি বোনাস",
             "TOTAL_HOURS": "মোট ঘণ্টা",
             "TOTAL_PERSONS": "মোট মানুষ",
+            "TRANSLATE": "অনুবাদ",
+            "THEME": "থিম",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');
     });
 })();
-(function(){
-    'use strict';
-    
-    angular.module('attendance')
-    .directive('headerTemplate', function(){
-        return{
-            restrict: "E",
-            transclude: true,
-            templateUrl: "app/templates/layouts/header-template.html",
-        };
-    });
-})();
-(function () {
-    'use strict';
-    
-    angular.module('attendance')
-        .directive('languageSelector', function () {
-            return {
-                restrict: "E",
-                templateUrl: "app/templates/utilities/language-selector.html"
-            }
-        });
-})();
-(function(){
-    'use strict';
-    
-    angular.module('attendance')
-    .directive('navigatorTemplate', function(){
-        return {
-            restrict: "E",
-            transclude: true, 
-            templateUrl: "app/templates/layouts/navigator-template.html",
-        }
-    });
-})();
-(function(){
-    'use strict';
-    
-    angular.module('attendance')
-    .directive('overallTable', function(){
-        return{
-            restrict: "E",
-            templateUrl: "app/templates/table/overall-table.html"
-        }
-    });
-})();
-(function () {
-    'use strict';
-
-    angular.module('attendance')
-        .directive('printButton', function ($window) {
-            return {
-                restrict: "E",
-                templateUrl: "app/templates/utilities/print-button.html",
-                link: function(scope, element, attributes){
-                    if(attributes.color){
-                        scope.color = attributes.color;
-                    }else{
-                        scope.color = "primary";
-                    }
-                    scope.printNow = function(){
-                        var printSections = document.getElementsByClassName('print-section');
-                        var contents = '';
-                        for(var i = 0; i < printSections.length; i++){
-                            contents += printSections[i].innerHTML;
-                        }
-                        var popUp = window.open('', '_blank');
-                        popUp.document.open();
-                        popUp.document.write(`<html>
-                                                    <head>
-                                                        <link rel="stylesheet" type="text/css" href="assets/main.css"/>
-                                                    </head>
-                                                    <body onload="window.print()">
-                                                        ${contents}
-                                                    </body>
-                                                </html>`);
-                        popUp.document.close();
-                    }
-                }
-            };
-        });
-})();
-
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .directive('printSection', function(){
-        return{
-            restrict: "A",
-            link: function(scope, element){
-                element[0].classList.add('print-section');
-            }
-        };
-    });
-})();
-(function () {
-    // "use strict";
-    
-    angular.module('attendance')
-        .directive('salaryDistributionTable', function () {
-            return {
-                restrict: "E",
-                scope: {
-                    "tableId": "=",
-                    "language": "=",
-                    "currentPageName": "="
-                },
-                templateUrl: "app/templates/table/salary-distribution-table.html"
-            }
-        });
-})();
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .directive('themeSelector', function(){
-        return{
-            restrict: "E",
-            templateUrl: "app/templates/utilities/theme-selector.html"
-        }
-    });
-})();
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .factory('excelFactory', function ($window) {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
-                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
-                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
-            return {
-                    tableToExcel: function (tableId, worksheetName) {
-                        var table = $("#" + tableId),
-                            ctx = { worksheet: worksheetName, table: table.html() },
-                            href = uri + base64(format(template, ctx));
-                        return href;
-                }
-            };
-        })
-})();
-
 (function(){
     'use strict';
     
@@ -555,6 +424,7 @@
             $scope.theme = 'dark';
             $scope.language = 'en';
             $scope.logoSrc = "app/images/logo/logo.png";
+            $scope.sidebarHide = false;
 
             $scope.$on('themeChanged', function($event, message){
                 $scope.theme = message;
@@ -574,7 +444,21 @@
                     a.click();
                     a.remove();
                 }, 100);  
-            }
+            };
+
+            $scope.sidebarToggle = function(){
+                if($scope.sidebarHide){
+                    //If the sidebar is hidden
+                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
+                    wrapper_content[0].classList.add('col');
+                    wrapper_content[0].classList.remove('col-md-10');
+                }else{
+                    //If the sidebar shows
+                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
+                    wrapper_content[0].classList.add('col-md-10');
+                    wrapper_content[0].classList.remove('col');
+                }
+            };
     });
 })();
 (function () {
@@ -661,6 +545,162 @@
         .controller('totalSalaryCtrl', function ($scope) {
 
         });
+})();
+
+(function(){
+    'use strict';
+    
+    angular.module('attendance')
+    .directive('headerTemplate', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/layouts/header-template.html",
+        };
+    });
+})();
+(function () {
+    'use strict';
+    
+    angular.module('attendance')
+        .directive('languageSelector', function () {
+            return {
+                restrict: "E",
+                templateUrl: "app/templates/utilities/language-selector.html"
+            }
+        });
+})();
+(function(){
+    'use strict';
+    
+    angular.module('attendance')
+    .directive('navigatorTemplate', function(){
+        return {
+            restrict: "E",
+            transclude: {
+                'languageSelector': "languageSelector",
+                'themeSelector': "themeSelector",
+            },
+            templateUrl: "app/templates/layouts/navigator-template.html",
+        }
+    });
+})();
+(function(){
+    'use strict';
+    
+    angular.module('attendance')
+    .directive('overallTable', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/table/overall-table.html"
+        }
+    });
+})();
+(function () {
+    'use strict';
+
+    angular.module('attendance')
+        .directive('printButton', function ($window) {
+            return {
+                restrict: "E",
+                templateUrl: "app/templates/utilities/print-button.html",
+                link: function(scope, element, attributes){
+                    if(attributes.color){
+                        scope.color = attributes.color;
+                    }else{
+                        scope.color = "primary";
+                    }
+                    scope.printNow = function(){
+                        var printSections = document.getElementsByClassName('print-section');
+                        var contents = '';
+                        for(var i = 0; i < printSections.length; i++){
+                            contents += printSections[i].innerHTML;
+                        }
+                        var popUp = $window.open('', '_blank');
+                        popUp.document.open();
+                        popUp.document.write(`<html>
+                                                    <head>
+                                                        <link rel="stylesheet" type="text/css" href="assets/main.css"/>
+                                                    </head>
+                                                    <body onload="window.print()">
+                                                        ${contents}
+                                                    </body>
+                                                </html>`);
+                        popUp.document.close();
+                    }
+                }
+            };
+        });
+})();
+
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .directive('printSection', function(){
+        return{
+            restrict: "A",
+            link: function(scope, element){
+                element[0].classList.add('print-section');
+            }
+        };
+    });
+})();
+(function () {
+    // "use strict";
+    
+    angular.module('attendance')
+        .directive('salaryDistributionTable', function () {
+            return {
+                restrict: "E",
+                scope: {
+                    "tableId": "=",
+                    "language": "=",
+                    "currentPageName": "="
+                },
+                templateUrl: "app/templates/table/salary-distribution-table.html"
+            }
+        });
+})();
+(function(){
+    "use strict";
+
+    angular.module('attendance')
+    .directive('sidebarTemplate', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/layouts/sidebar-template.html",
+        }
+    });
+})();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .directive('themeSelector', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/utilities/theme-selector.html"
+        }
+    });
+})();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .factory('excelFactory', function ($window) {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
+                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
+            return {
+                    tableToExcel: function (tableId, worksheetName) {
+                        var table = $("#" + tableId),
+                            ctx = { worksheet: worksheetName, table: table.html() },
+                            href = uri + base64(format(template, ctx));
+                        return href;
+                }
+            };
+        })
 })();
 
 (function(){   
