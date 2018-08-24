@@ -84,7 +84,7 @@ $dark-lighten-colors: (
         color: $value !important; }
 
         .bg-#{$key}{
-        background-color: $dark-primary !important; }
+        background-color: $value !important; }
 
         .btn-#{$key} {
             color: #fff;

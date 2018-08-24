@@ -16,9 +16,25 @@
     <navigator-template>
         <language-selector></language-selector>
     </navigator-template>
-    <header-template>
-        <theme-selector></theme-selector>
-    </header-template>
-    <ui-view></ui-view>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Hide all whose screen size is smaller than small -->
+            <div class="wrapper-sidebar col-md-2 bg-danger d-none d-sm-block">
+                <sidebar-template></sidebar-template>
+            </div>
+            <div class="wrapper-content col-md-10">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <header-template>
+                                <theme-selector></theme-selector>
+                            </header-template>
+                            <ui-view></ui-view>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
