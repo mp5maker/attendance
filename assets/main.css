@@ -9630,6 +9630,20 @@ a.text-dark:hover, a.text-dark:focus {
   100% {
     left: 0; } }
 
+.theme-selector {
+  border-radius: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; }
+
+.language-selector {
+  border-radius: 50%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; }
+
 .dark .border-primary {
   border-color: #263238 !important; }
 
