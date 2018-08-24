@@ -9630,6 +9630,126 @@ a.text-dark:hover, a.text-dark:focus {
   100% {
     left: 0; } }
 
+.scrollbar.scrollbar-primary ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-primary ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #007bff;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #66b0ff;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #004a99;
+  background-color: #007bff; }
+
+.scrollbar.scrollbar-secondary ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-secondary ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #6c757d;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #a1a8ae;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #3d4246;
+  background-color: #6c757d; }
+
+.scrollbar.scrollbar-success ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-success ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #28a745;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #5dd879;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #145523;
+  background-color: #28a745; }
+
+.scrollbar.scrollbar-warning ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-warning ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #ffc107;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #ffdb6d;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #a07800;
+  background-color: #ffc107; }
+
+.scrollbar.scrollbar-danger ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-danger ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #dc3545;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #eb8c95;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #921925;
+  background-color: #dc3545; }
+
+.scrollbar.scrollbar-info ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-info ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #17a2b8;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #4cd3e9;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #0c525d;
+  background-color: #17a2b8; }
+
+.scrollbar.scrollbar-dark ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-dark ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #343a40;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #626d78;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #060708;
+  background-color: #343a40; }
+
+.scrollbar.scrollbar-light ::-webkit-scrollbar {
+  width: 12px; }
+
+.scrollbar.scrollbar-light ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #f8f9fa;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px white;
+  border-radius: 10px; }
+
+.scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #bdc6d0;
+  background-color: #f8f9fa; }
+
 .dark .border-primary {
   border-color: #263238 !important; }
 
@@ -9666,6 +9786,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .btn-primary:not(:disabled):not(.disabled):active:focus, .dark .btn-primary:not(:disabled):not(.disabled).active:focus,
 .dark .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #263238; }
+
+.dark .scrollbar.scrollbar-primary ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-primary ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #263238;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #3b4d56;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #11171a;
+  background-color: #263238; }
 
 .dark .border-secondary {
   border-color: #4a148c !important; }
@@ -9704,6 +9839,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .show > .btn-secondary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #4a148c; }
 
+.dark .scrollbar.scrollbar-secondary ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-secondary ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #4a148c;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #621ab9;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #320e5f;
+  background-color: #4a148c; }
+
 .dark .border-success {
   border-color: #004d40 !important; }
 
@@ -9740,6 +9890,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .btn-success:not(:disabled):not(.disabled):active:focus, .dark .btn-success:not(:disabled):not(.disabled).active:focus,
 .dark .show > .btn-success.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #004d40; }
+
+.dark .scrollbar.scrollbar-success ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-success ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #004d40;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #00806a;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #001a16;
+  background-color: #004d40; }
 
 .dark .border-info {
   border-color: #006064 !important; }
@@ -9778,6 +9943,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .show > .btn-info.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #006064; }
 
+.dark .scrollbar.scrollbar-info ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-info ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #006064;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #009197;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #002f31;
+  background-color: #006064; }
+
 .dark .border-warning {
   border-color: #fb8c00 !important; }
 
@@ -9814,6 +9994,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .btn-warning:not(:disabled):not(.disabled):active:focus, .dark .btn-warning:not(:disabled):not(.disabled).active:focus,
 .dark .show > .btn-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #fb8c00; }
+
+.dark .scrollbar.scrollbar-warning ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-warning ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #fb8c00;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #ffa32f;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #c87000;
+  background-color: #fb8c00; }
 
 .dark .border-danger {
   border-color: #880e4f !important; }
@@ -9852,6 +10047,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .show > .btn-danger.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #880e4f; }
 
+.dark .scrollbar.scrollbar-danger ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-danger ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #880e4f;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px #b6136a;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #5a0934;
+  background-color: #880e4f; }
+
 .dark .border-light {
   border-color: #000a12 !important; }
 
@@ -9889,6 +10099,21 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .show > .btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #000a12; }
 
+.dark .scrollbar.scrollbar-light ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-light ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #000a12;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px white;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #b0e5fc;
+  background-color: #000a12; }
+
 .dark .border-dark {
   border-color: #000a12 !important; }
 
@@ -9925,3 +10150,18 @@ a.text-dark:hover, a.text-dark:focus {
 .dark .btn-dark:not(:disabled):not(.disabled):active:focus, .dark .btn-dark:not(:disabled):not(.disabled).active:focus,
 .dark .show > .btn-dark.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #000a12; }
+
+.dark .scrollbar.scrollbar-dark ::-webkit-scrollbar {
+  width: 12px; }
+
+.dark .scrollbar.scrollbar-dark ::-webkit-scrollbar-track:vertical {
+  box-shadow: inset 0 0 6px #000a12;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical {
+  box-shadow: inset 0 0 6px white;
+  border-radius: 10px; }
+
+.dark .scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical:hover {
+  box-shadow: inset 0 0 6px #b0e5fc;
+  background-color: #000a12; }

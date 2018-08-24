@@ -1,0 +1,66 @@
+$scrollbar-colors:( 
+    primary: $primary, 
+    secondary: $secondary, 
+    success: $success,
+    warning: $warning,
+    danger: $danger,
+    info: $info,
+    dark: $dark,
+    light: $light,
+    );
+    
+$scrollbar-colors-lighten: (
+    primary: lighten($primary, 20%), 
+    secondary: lighten($secondary, 20%), 
+    success: lighten($success, 20%),
+    warning: lighten($warning, 20%),
+    danger: lighten($danger, 20%),
+    info: lighten($info, 20%),
+    dark: lighten($dark, 20%),
+    light: lighten($light, 20%),
+);
+
+$scrollbar-colors-darken: (
+    primary: darken($primary, 20%), 
+    secondary: darken($secondary, 20%), 
+    success: darken($success, 20%),
+    warning: darken($warning, 20%),
+    danger: darken($danger, 20%),
+    info: darken($info, 20%),
+    dark: darken($dark, 20%),
+    light: darken($light, 20%),
+);
+
+@function get-scrollbar-darken-color($color){
+    @return map-get($scrollbar-colors-darken, $color);
+}
+
+@function get-scrollbar-lighten-color($color){
+    @return map-get($scrollbar-colors-lighten, $color);
+}
+
+@each $key, $value in $scrollbar-colors{
+    .scrollbar.scrollbar-#{$key}{
+        ::-webkit-scrollbar{
+            width: 12px;
+        }
+    
+        // Track
+        ::-webkit-scrollbar-track:vertical{
+            box-shadow: inset 0 0 6px $value;
+            border-radius: 10px;
+        }
+        
+        // Thumb
+        ::-webkit-scrollbar-thumb:vertical{
+            box-shadow: inset 0 0 6px get-scrollbar-lighten-color($key);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:vertical:hover{
+            box-shadow: inset 0 0 6px get-scrollbar-darken-color($key);
+            background-color: $value;
+        }
+    }
+}                
+

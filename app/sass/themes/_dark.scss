@@ -89,24 +89,52 @@ $dark-lighten-colors: (
         .btn-#{$key} {
             color: #fff;
             background-color: $value;
-            border-color: $value; }
-            .btn-#{$key}:hover {
-                color: #fff;
-                background-color: $value;
-                border-color: get-dark-darken-color($key); }
-            .btn-#{$key}:focus, .btn-#{$key}.focus {
-                box-shadow: 0 0 0 0.2rem $value }
-            .btn-#{$key}.disabled, .btn-#{$key}:disabled {
-                color: #fff;
-                background-color: get-dark-lighten-color($key);
-                border-color: get-dark-lighten-color($key); }
-            .btn-#{$key}:not(:disabled):not(.disabled):active, .btn-#{$key}:not(:disabled):not(.disabled).active,
-            .show > .btn-#{key}.dropdown-toggle {
-                color: #fff;
-                background-color: get-dark-darken-color($key);
-                border-color: get-dark-darken-color($key); }
-                .btn-#{$key}:not(:disabled):not(.disabled):active:focus, .btn-#{$key}:not(:disabled):not(.disabled).active:focus,
-                .show > .btn-#{$key}.dropdown-toggle:focus {
-                box-shadow: 0 0 0 0.2rem $value; }
+            border-color: $value; 
         }
+        .btn-#{$key}:hover {
+            color: #fff;
+            background-color: $value;
+            border-color: get-dark-darken-color($key); 
+        }
+        .btn-#{$key}:focus, .btn-#{$key}.focus {
+            box-shadow: 0 0 0 0.2rem $value 
+        }
+        .btn-#{$key}.disabled, .btn-#{$key}:disabled {
+            color: #fff;
+            background-color: get-dark-lighten-color($key);
+            border-color: get-dark-lighten-color($key); 
+        }
+        .btn-#{$key}:not(:disabled):not(.disabled):active, .btn-#{$key}:not(:disabled):not(.disabled).active,
+        .show > .btn-#{key}.dropdown-toggle {
+            color: #fff;
+            background-color: get-dark-darken-color($key);
+            border-color: get-dark-darken-color($key); 
+        }
+        .btn-#{$key}:not(:disabled):not(.disabled):active:focus, .btn-#{$key}:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-#{$key}.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem $value; 
+        }
+        .scrollbar.scrollbar-#{$key}{
+            ::-webkit-scrollbar{
+                width: 12px;
+            }
+        
+            // Track
+            ::-webkit-scrollbar-track:vertical{
+                box-shadow: inset 0 0 6px $value;
+                border-radius: 10px;
+            }
+            
+            // Thumb
+            ::-webkit-scrollbar-thumb:vertical{
+                box-shadow: inset 0 0 6px get-dark-lighten-color($key);
+                border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb:vertical:hover{
+                box-shadow: inset 0 0 6px get-dark-darken-color($key);
+                background-color: $value;
+            }
+        }
+    }
 }
