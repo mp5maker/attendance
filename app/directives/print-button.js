@@ -18,7 +18,7 @@
                         for(var i = 0; i < printSections.length; i++){
                             contents += printSections[i].innerHTML;
                         }
-                        var popUp = window.open('', '_blank');
+                        var popUp = $window.open('', '_blank');
                         popUp.document.open();
                         popUp.document.write(`<html>
                                                     <head>

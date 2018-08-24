@@ -1,16 +1,12 @@
-<div class="container-fluid" ng-controller = 'cuttingCtrl'>
-    <div class="row">
-        <div class="col">
-            <div class='text-right'>
-                <print-button></print-button>
-                <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
-                    <i class="fa fa-file-excel-o"></i>
-                </button>
-            </div>
-            <salary-distribution-table  print-section table-id='tableId' 
-                                        current-page-name = 'currentPageName'
-                                        language='language'>
-            </salary-distribution-table>
-        </div>
+<div ng-controller = 'cuttingCtrl'>
+    <div class='text-right'>
+        <print-button></print-button>
+        <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
+            <i class="fa fa-file-excel-o"></i>
+        </button>
     </div>
+    <salary-distribution-table  print-section table-id='tableId' 
+                                current-page-name = 'currentPageName'
+                                language='language'>
+    </salary-distribution-table>
 </div>

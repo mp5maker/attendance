@@ -13,23 +13,30 @@
     <script src="assets/main.js"></script>
 </head>
 <body class = '{{theme}}' ng-controller = 'mainCtrl'>
+    <!-- Contains the navigation bar with language selector -->
     <navigator-template>
         <language-selector></language-selector>
     </navigator-template>
     <div class="container-fluid">
         <div class="row">
-            <!-- Hide all whose screen size is smaller than small -->
+            <!-- Sidebar -->
             <div class="wrapper-sidebar col-md-2 bg-danger d-none d-sm-block">
+                <!-- Hide all whose screen size is smaller than small -->
                 <sidebar-template></sidebar-template>
             </div>
+            <!-- Main Content -->
             <div class="wrapper-content col-md-10">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col">
+                            <!-- Show Header with theme selector -->
                             <header-template>
                                 <theme-selector></theme-selector>
                             </header-template>
-                            <ui-view></ui-view>
+                            <!-- Main Content -->
+                            <div class = 'mt-3'>
+                                <ui-view></ui-view>
+                            </div>
                         </div>
                     </div>    
                 </div>
