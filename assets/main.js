@@ -143,6 +143,8 @@
             ".": ".",
             "D": "D",
             "L": "L",
+            "EN": "EN",
+            "BN": "BN",
             "AGS_TEXTILES_LIMITED": "AGS Textiles Limited",
             "AGS_TEXTILES_ADDRESS": "Bashir Plaza, Bamoil Bazar, Sarulia Demra, Dhaka-1361 Dhaka, Bangladesh",
             "HOME": "Home",
@@ -226,6 +228,8 @@
             "ATTENDANCE_BONUS": "Attendance Bonus",
             "TOTAL_HOURS": "Total Hours",
             "TOTAL_PERSONS": "Total Persons",
+            "TRANSLATE": "Translate",
+            "THEME": "Theme",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -244,6 +248,8 @@
             ".": ".",
             "D": "ডি",
             "L": "এল",
+            "EN": "ই",
+            "BN": "বি",
             "AGS_TEXTILES_LIMITED": "এজিএস টেক্সটাইল লিমিটেড",
             "AGS_TEXTILES_ADDRESS": "বশির প্লাজা, বামুল বাজার, সারুলিয়া ডেমরা, ঢাকা -1661, ঢাকা, বাংলাদেশ",
             "HOME": "নিবাস",
@@ -325,6 +331,8 @@
             "ATTENDANCE_BONUS": "উপস্থিতি বোনাস",
             "TOTAL_HOURS": "মোট ঘণ্টা",
             "TOTAL_PERSONS": "মোট মানুষ",
+            "TRANSLATE": "অনুবাদ",
+            "THEME": "থিম",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');
@@ -540,26 +548,6 @@
 })();
 
 (function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .factory('excelFactory', function ($window) {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
-                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
-                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
-            return {
-                    tableToExcel: function (tableId, worksheetName) {
-                        var table = $("#" + tableId),
-                            ctx = { worksheet: worksheetName, table: table.html() },
-                            href = uri + base64(format(template, ctx));
-                        return href;
-                }
-            };
-        })
-})();
-
-(function(){
     'use strict';
     
     angular.module('attendance')
@@ -695,6 +683,26 @@
         }
     });
 })();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .factory('excelFactory', function ($window) {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
+                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
+            return {
+                    tableToExcel: function (tableId, worksheetName) {
+                        var table = $("#" + tableId),
+                            ctx = { worksheet: worksheetName, table: table.html() },
+                            href = uri + base64(format(template, ctx));
+                        return href;
+                }
+            };
+        })
+})();
+
 (function(){   
     "use strict";
 

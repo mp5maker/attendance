@@ -1,8 +1,13 @@
 <span ng-controller = 'themeSelectorCtrl'>
-    <button type='button' class='btn btn-primary theme-selector' ng-click='themeDark()'>
-        <span>{{'D' | translate}}</span>
-    </button>
-    <button type='button' class='btn btn-secondary theme-selector' ng-click='themeLight()'>
-        <span>{{'L' | translate}}</span>
-    </button>
+    <div>
+        <button type='button' class='btn btn-primary rounded' ng-click='themeDark()'>
+            <span>{{'D' | translate}}</span>
+        </button>
+        <button type='button' class='btn btn-secondary rounded' ng-click='themeLight()'>
+            <span>{{'L' | translate}}</span>
+        </button>
+    </div>
+    <div class = 'text-white text-center font-size-reduce-30 line-height-reduce-20 mt-1'>
+        {{'THEME' | translate}}
+    </div>
 </span>

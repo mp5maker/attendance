@@ -1,4 +1,17 @@
 <span ng-controller = 'languageSelectorCtrl'>
-    <button type='btn' class='btn btn-success language-selector' ng-click='languageEnglish()' translate = "EN"></button>
-    <button type='btn' class='btn btn-warning language-selector' ng-click='languageBengali()' translate = "BN"></button>
+    <div>
+        <button type='btn' class='btn btn-success rounded' ng-click='languageEnglish()'>
+            <span class = 'font-size-reduce-10'>
+                {{'EN' | translate}}
+            </span>
+        </button>
+        <button type='btn' class='btn btn-warning rounded' ng-click='languageBengali()'>
+            <span class = 'font-size-reduce-10'>
+                {{'BN' | translate}}
+            </span>
+        </button>
+    </div>
+    <div class="text-white text-center line-height-reduce-20 font-size-reduce-30 mt-1">
+        {{ 'TRANSLATE' | translate }}
+    </div>
 </span>
