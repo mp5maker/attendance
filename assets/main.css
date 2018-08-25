@@ -9639,11 +9639,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #66b0ff;
+  background-color: #66b0ff;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #004a99;
-  background-color: #007bff; }
+  background-color: #004a99; }
 
 .scrollbar.scrollbar-secondary ::-webkit-scrollbar {
   width: 12px; }
@@ -9654,11 +9655,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #a1a8ae;
+  background-color: #a1a8ae;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #3d4246;
-  background-color: #6c757d; }
+  background-color: #3d4246; }
 
 .scrollbar.scrollbar-success ::-webkit-scrollbar {
   width: 12px; }
@@ -9669,11 +9671,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #5dd879;
+  background-color: #5dd879;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #145523;
-  background-color: #28a745; }
+  background-color: #145523; }
 
 .scrollbar.scrollbar-warning ::-webkit-scrollbar {
   width: 12px; }
@@ -9684,11 +9687,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #ffdb6d;
+  background-color: #ffdb6d;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #a07800;
-  background-color: #ffc107; }
+  background-color: #a07800; }
 
 .scrollbar.scrollbar-danger ::-webkit-scrollbar {
   width: 12px; }
@@ -9699,11 +9703,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #eb8c95;
+  background-color: #eb8c95;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #921925;
-  background-color: #dc3545; }
+  background-color: #921925; }
 
 .scrollbar.scrollbar-info ::-webkit-scrollbar {
   width: 12px; }
@@ -9714,11 +9719,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #4cd3e9;
+  background-color: #4cd3e9;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #0c525d;
-  background-color: #17a2b8; }
+  background-color: #0c525d; }
 
 .scrollbar.scrollbar-dark ::-webkit-scrollbar {
   width: 12px; }
@@ -9729,11 +9735,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #626d78;
+  background-color: #626d78;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #060708;
-  background-color: #343a40; }
+  background-color: #060708; }
 
 .scrollbar.scrollbar-light ::-webkit-scrollbar {
   width: 12px; }
@@ -9744,11 +9751,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px white;
+  background-color: white;
   border-radius: 10px; }
 
 .scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #bdc6d0;
-  background-color: #f8f9fa; }
+  background-color: #bdc6d0; }
 
 .dark .border-primary {
   border-color: #263238 !important; }
@@ -9796,11 +9804,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #3b4d56;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #3b4d56; }
 
 .dark .scrollbar.scrollbar-primary ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #11171a;
-  background-color: #263238; }
+  background-color: #11171a; }
 
 .dark .border-secondary {
   border-color: #4a148c !important; }
@@ -9848,11 +9857,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #621ab9;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #621ab9; }
 
 .dark .scrollbar.scrollbar-secondary ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #320e5f;
-  background-color: #4a148c; }
+  background-color: #320e5f; }
 
 .dark .border-success {
   border-color: #004d40 !important; }
@@ -9900,11 +9910,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #00806a;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #00806a; }
 
 .dark .scrollbar.scrollbar-success ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #001a16;
-  background-color: #004d40; }
+  background-color: #001a16; }
 
 .dark .border-info {
   border-color: #006064 !important; }
@@ -9952,11 +9963,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #009197;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #009197; }
 
 .dark .scrollbar.scrollbar-info ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #002f31;
-  background-color: #006064; }
+  background-color: #002f31; }
 
 .dark .border-warning {
   border-color: #fb8c00 !important; }
@@ -10004,11 +10016,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #ffa32f;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #ffa32f; }
 
 .dark .scrollbar.scrollbar-warning ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #c87000;
-  background-color: #fb8c00; }
+  background-color: #c87000; }
 
 .dark .border-danger {
   border-color: #880e4f !important; }
@@ -10056,11 +10069,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px #b6136a;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #b6136a; }
 
 .dark .scrollbar.scrollbar-danger ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #5a0934;
-  background-color: #880e4f; }
+  background-color: #5a0934; }
 
 .dark .border-light {
   border-color: #000a12 !important; }
@@ -10108,11 +10122,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px white;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: white; }
 
 .dark .scrollbar.scrollbar-light ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #b0e5fc;
-  background-color: #000a12; }
+  background-color: #b0e5fc; }
 
 .dark .border-dark {
   border-color: #000a12 !important; }
@@ -10160,8 +10175,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .dark .scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical {
   box-shadow: inset 0 0 6px white;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: white; }
 
 .dark .scrollbar.scrollbar-dark ::-webkit-scrollbar-thumb:vertical:hover {
   box-shadow: inset 0 0 6px #b0e5fc;
-  background-color: #000a12; }
+  background-color: #b0e5fc; }

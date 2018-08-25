@@ -54,12 +54,13 @@ $scrollbar-colors-darken: (
         // Thumb
         ::-webkit-scrollbar-thumb:vertical{
             box-shadow: inset 0 0 6px get-scrollbar-lighten-color($key);
+            background-color: get-scrollbar-lighten-color($key);
             border-radius: 10px;
         }
         
         ::-webkit-scrollbar-thumb:vertical:hover{
             box-shadow: inset 0 0 6px get-scrollbar-darken-color($key);
-            background-color: $value;
+            background-color: get-scrollbar-darken-color($key);
         }
     }
 }                

@@ -129,11 +129,12 @@ $dark-lighten-colors: (
             ::-webkit-scrollbar-thumb:vertical{
                 box-shadow: inset 0 0 6px get-dark-lighten-color($key);
                 border-radius: 10px;
+                background-color: get-dark-lighten-color($key);
             }
             
             ::-webkit-scrollbar-thumb:vertical:hover{
                 box-shadow: inset 0 0 6px get-dark-darken-color($key);
-                background-color: $value;
+                background-color: get-dark-darken-color($key);
             }
         }
     }
