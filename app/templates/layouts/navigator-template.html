@@ -1,8 +1,8 @@
-<nav class = 'navbar navbar-expand-sm navbar-dark bg-dark fixed-top mb-5'>
+<nav class = 'navbar navbar-expand-md navbar-dark bg-dark fixed-top mb-5'>
     <a class = 'navbar-brand navigation-css-transition' ng-click = 'sidebarHide =! sidebarHide; sidebarToggle()'>
         <img ng-src = '{{logoSrc}}' class = 'd-inline-block'/>
         <div class="d-inline-block">
-            <span class = 'd-none d-sm-block'>
+            <span class = 'd-none d-md-block'>
                 <span class='text-white' translate='AGS_TEXTILES_LIMITED'></span>
                 <span class='text-warning font-size-reduce-40' translate='AGS_TEXTILES_ADDRESS'></span>
             </span>
@@ -13,7 +13,7 @@
     </button>
     <div class = 'collapse navbar-collapse' id = 'navigationCollapse'>
         <!-- Hide this section when the screen size is bigger than small -->
-        <ul class = 'navbar-nav d-sm-none'>
+        <ul class = 'navbar-nav d-md-none'>
             <li class = 'nav-item'>
                 <a ui-sref = 'home' ui-sref-active = 'active' class = 'nav-link' translate = "HOME"></a>
             </li>
@@ -53,15 +53,6 @@
             <li class = 'nav-item'>
                 <a ui-sref = 'settings' ui-sref-active = 'active' class = 'nav-link' translate = "SETTINGS"></a>
             </li>
-        </ul>
-        <!-- English/Bengaai Translation Option -->
-        <ul class = 'navbar-nav ml-auto d-none d-sm-block'>
-            <div class="d-inline-block">
-                <language-selector></language-selector>
-            </div>
-            <div class="d-inline-block">
-                <theme-selector></theme-selector>
-            </div>
         </ul>
     </div>
 </nav>

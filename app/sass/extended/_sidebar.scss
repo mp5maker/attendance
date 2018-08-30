@@ -3,6 +3,18 @@
     overflow-x: hidden;
     text-decoration: none;
     list-style: none;
+    .navbar{
+        padding: 0px;
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    padding: 0;
+                    margin-bottom: 10px;
+                    font-size: 90%;
+                }
+            }
+        }
+    }
 }
 
 .wrapper-sidebar.ng-hide{
@@ -26,20 +38,5 @@
         left: -100%;
     }100%{
         left: 0;
-    }
-}
-
-.wrapper-sidebar{
-    .navbar{
-        padding: 0px;
-        .navbar-nav{
-            .nav-item{
-                .nav-link{
-                    padding: 0;
-                    margin-bottom: 10px;
-                    font-size: 90%;
-                }
-            }
-        }
     }
 }
