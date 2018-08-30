@@ -33,11 +33,11 @@
                     //If the sidebar is hidden
                     var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
                     wrapper_content[0].classList.add('col');
-                    wrapper_content[0].classList.remove('col-md-10');
+                    wrapper_content[0].classList.remove('col-md-11');
                 }else{
                     //If the sidebar shows
                     var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
-                    wrapper_content[0].classList.add('col-md-10');
+                    wrapper_content[0].classList.add('col-md-11');
                     wrapper_content[0].classList.remove('col');
                 }
             };

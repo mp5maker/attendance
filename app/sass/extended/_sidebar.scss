@@ -28,3 +28,18 @@
         left: 0;
     }
 }
+
+.wrapper-sidebar{
+    .navbar{
+        padding: 0px;
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    padding: 0;
+                    margin-bottom: 10px;
+                    font-size: 90%;
+                }
+            }
+        }
+    }
+}
