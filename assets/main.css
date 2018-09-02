@@ -9813,14 +9813,34 @@ h4.table-header {
     table.salary-distribution-table thead tr {
       display: none; }
     table.salary-distribution-table tbody.table-data tr td {
-      display: block;
       position: relative;
-      padding-right: 100%;
-      margin-bottom: 1rem; }
+      display: block;
+      margin-bottom: 1rem;
+      left: 50%; }
     table.salary-distribution-table tbody.table-data tr td:after {
       position: absolute;
       content: attr(data-head);
-      white-space: nowrap; } }
+      white-space: nowrap;
+      left: -50%; } }
+
+@media screen and (max-width: 730px) {
+  .overall-table {
+    border: none; }
+    .overall-table thead, .overall-table tbody, .overall-table tr, .overall-table td, .overall-table th {
+      border: none; }
+    .overall-table thead th {
+      display: none; }
+    .overall-table tbody tr td {
+      position: relative;
+      display: block;
+      left: 50%;
+      text-align: right; }
+    .overall-table tbody tr td:before {
+      position: absolute;
+      content: attr(data-head);
+      white-space: nowrap;
+      left: -50%;
+      text-align: left; } }
 
 .dark .border-primary {
   border-color: #263238 !important; }

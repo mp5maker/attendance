@@ -1,10 +1,8 @@
 <div ng-controller = 'cuttingCtrl'>
-    <div class='ml-auto'>
-        <print-button></print-button>
-        <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
-            <i class="fa fa-file-excel-o"></i>
-        </button>
-    </div>
+    <print-button></print-button>
+    <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
+        <i class="fa fa-file-excel-o"></i>
+    </button>
     <salary-distribution-table  print-section table-id='tableId' 
                                 current-page-name = 'currentPageName'
                                 language='language'>

@@ -33,15 +33,16 @@ and (max-width: 1690px){
         tbody.table-data{
             tr{
                 td{
-                    display: block;
                     position: relative;
-                    padding-right: 100%;
+                    display: block;
                     margin-bottom: 1rem;
+                    left: 50%;
                 }
                 td:after{
                     position: absolute;
                     content: attr(data-head);
                     white-space: nowrap;
+                    left: -50%;
                 }
             }
         }

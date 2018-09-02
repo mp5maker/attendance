@@ -1,5 +1,6 @@
-<table class="table table-bordered text-center table-hover">
-    <h4 class='my-3 text-center'>{{ 'TOTAL_SALARY' | translate}}</h4>
+<h4 class="table-header">{{ 'TOTAL_SALARY' | translate}}</h4>
+<table class="table table-bordered text-center table-hover overall-table">
+    <caption>{{ 'TOTAL_SALARY' | translate}}</caption>
     <thead class = 'thead-light'>
         <tr>
             <th>{{'SL_NO' | translate}}</th>
@@ -14,14 +15,14 @@
     </thead>
     <tbody>
         <tr>
-            <td> {{'1' | numberTranslate:language}} </td>
-            <td> {{'MANAGEMENT' | translate}} </td>
-            <td> {{'200000' | numberTranslate:language}} </td>
-            <td> {{'200000' | numberTranslate:language}} </td>
-            <td> {{'7,065' | numberTranslate:language}} </td>
-            <td> {{'1000' | numberTranslate:language}} </td>
-            <td> {{'219' | numberTranslate:language}} </td>
-            <td> {{'5' | numberTranslate:language}} </td>
+            <td data-head="{{'SL_NO' | translate}}"> {{'1' | numberTranslate:language}} </td>
+            <td data-head="{{'SECTION' | translate}}"> {{'MANAGEMENT' | translate}} </td>
+            <td data-head="{{'TOTAL_SALARY' | translate}}"> {{'200000' | numberTranslate:language}} </td>
+            <td data-head="{{'PAYABLE' | translate}}"> {{'200000' | numberTranslate:language}} </td>
+            <td data-head="{{'OVERTIME' | translate}}"> {{'7,065' | numberTranslate:language}} </td>
+            <td data-head="{{'ATTENDANCE_BONUS' | translate}}"> {{'1000' | numberTranslate:language}} </td>
+            <td data-head="{{'TOTAL_HOURS' | translate}}"> {{'219' | numberTranslate:language}} </td>
+            <td data-head="{{'TOTAL_PERSONS' | translate}}"> {{'5' | numberTranslate:language}} </td>
         </tr>
     </tbody>
 </table>
