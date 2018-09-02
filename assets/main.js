@@ -348,6 +348,11 @@
         $scope.tableId = 'admin-staff-table';
         $scope.worksheetName = 'management-money-distribution-sheet';
         $scope.currentPageName = 'ADMIN_STAFF';
+
+        // Emitting the Values
+        $scope.$emit('tableId', $scope.tableId);
+        $scope.$emit('worksheetName', $scope.worksheetName);
+        $scope.$emit('currentPageName', $scope.currentPageName);
     });
 })();
 
@@ -368,6 +373,11 @@
             $scope.tableId = 'cutting-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = 'CUTTING';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         }); 
 })();
 
@@ -379,6 +389,11 @@
             $scope.tableId = 'finishing-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = "FINISHING";
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -415,6 +430,11 @@
             $scope.tableId = 'loader-cleaner-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = "LOADER_CLEANER";
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -461,6 +481,21 @@
                     wrapper_content[0].classList.remove('col');
                 }
             };
+            
+            // Get Table ID for the excel export
+            $scope.$on('tableId', function(event, data){
+                $scope.tableId = data;
+            });
+
+            // Get the Worksheet name
+            $scope.$on('worksheetName', function(event, data){
+                $scope.worksheetName = data;
+            });
+
+            // Get the Current page name
+            $scope.$on('currentPageName', function(event, data){
+                $scope.currentPageName = data;
+            });
     });
 })();
 (function () {
@@ -471,6 +506,11 @@
             $scope.tableId = 'management-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = 'MANAGEMENT';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -482,6 +522,11 @@
             $scope.tableId = 'production-staff-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = "PRODUCTION_STAFF";
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -493,6 +538,11 @@
             $scope.tableId = 'quality-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = 'QUALITY';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -513,6 +563,11 @@
             $scope.tableId = 'sewing-helper-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = 'SEWING_HELPER';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -524,6 +579,11 @@
             $scope.tableId = 'sewing-operator-table';
             $scope.worksheetName = 'management-money-distribution-sheet';
             $scope.currentPageName = 'SEWING_OPERATOR';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
         });
 })();
 
@@ -555,26 +615,6 @@
         .controller('totalSalaryCtrl', function ($scope) {
 
         });
-})();
-
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .factory('excelFactory', function ($window) {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
-                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
-                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
-            return {
-                    tableToExcel: function (tableId, worksheetName) {
-                        var table = $("#" + tableId),
-                            ctx = { worksheet: worksheetName, table: table.html() },
-                            href = uri + base64(format(template, ctx));
-                        return href;
-                }
-            };
-        })
 })();
 
 (function(){
@@ -721,6 +761,26 @@
         }
     });
 })();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .factory('excelFactory', function ($window) {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
+                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
+            return {
+                    tableToExcel: function (tableId, worksheetName) {
+                        var table = $("#" + tableId),
+                            ctx = { worksheet: worksheetName, table: table.html() },
+                            href = uri + base64(format(template, ctx));
+                        return href;
+                }
+            };
+        })
+})();
+
 (function(){   
     "use strict";
 

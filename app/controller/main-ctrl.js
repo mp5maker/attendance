@@ -41,5 +41,20 @@
                     wrapper_content[0].classList.remove('col');
                 }
             };
+            
+            // Get Table ID for the excel export
+            $scope.$on('tableId', function(event, data){
+                $scope.tableId = data;
+            });
+
+            // Get the Worksheet name
+            $scope.$on('worksheetName', function(event, data){
+                $scope.worksheetName = data;
+            });
+
+            // Get the Current page name
+            $scope.$on('currentPageName', function(event, data){
+                $scope.currentPageName = data;
+            });
     });
 })();
