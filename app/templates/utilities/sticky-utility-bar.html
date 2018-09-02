@@ -1,0 +1,19 @@
+<div class="my-3 d-inline-block">
+    <button class="btn btn-primary sticky-utility-button" ng-click="stickyHide =! stickyHide" ng-show="stickyHide">
+        <i class="fa fa-chevron-circle-left"></i>
+    </button>
+</div>
+<div class="bg-white sticky-utility border box-shadow d-inline-block" ng-hide="stickyHide">
+    <div class="my-3 p-3">
+        <button class="btn btn-danger sticky-utility-button" ng-click="stickyHide =! stickyHide">
+            <span>Hide</span>
+            <i class="fa fa-chevron-circle-right"></i>
+        </button>
+        <div class="my-3">
+            <language-selector></language-selector>
+        </div>
+        <div class="my-3">
+            <theme-selector></theme-selector>
+        </div>
+    </div>
+</div>

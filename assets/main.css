@@ -9764,6 +9764,35 @@ a.text-dark:hover, a.text-dark:focus {
   box-shadow: inset 0 0 6px #bdc6d0;
   background-color: #bdc6d0; }
 
+.sticky-utility-bar {
+  position: fixed;
+  top: 40%;
+  right: 0%; }
+  .sticky-utility-bar .sticky-utility, .sticky-utility-bar .sticky-utility-button {
+    opacity: 0.8;
+    z-index: -10; }
+  .sticky-utility-bar .sticky-utility-button.ng-hide-add {
+    opacity: 0; }
+  .sticky-utility-bar .sticky-utility.ng-hide-add {
+    animation: sticky-utility-hide; }
+  .sticky-utility-bar .sticky-utility {
+    animation: sticky-utility-show; }
+
+@keyframes sticky-utility-hide {
+  0% {
+    right: 0; }
+  100% {
+    right: -100%; } }
+
+@keyframes sticky-utility-show {
+  0% {
+    right: -100%; }
+  100% {
+    right: 0; } }
+
+.box-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+
 .dark .border-primary {
   border-color: #263238 !important; }
 
