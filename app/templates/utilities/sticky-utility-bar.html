@@ -15,5 +15,16 @@
         <div class="my-3">
             <theme-selector></theme-selector>
         </div>
+        <div class="my-3">
+            <div>
+                <div class='text-dark my-1'>
+                    {{'EXPORT' | translate}}
+                </div>
+                <print-button></print-button>
+                <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
+                    <i class="fa fa-file-excel-o"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </div>

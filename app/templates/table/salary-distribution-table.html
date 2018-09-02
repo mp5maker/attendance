@@ -1,5 +1,6 @@
-<table class = 'table table-hover table-bordered table-sm text-center font-size-reduce-20 table-responsive' id = '{{tableId}}'>
-    <h4 class = 'my-3 text-center'>{{currentPageName | translate}} {{':' | translate}} {{ 'MONEY_DISTRIBUTION_SHEET' | translate}}</h4>
+<h4 class = 'table-header'>{{currentPageName | translate}} {{':' | translate}} {{ 'MONEY_DISTRIBUTION_SHEET' | translate}}</h4>
+<table class = 'table table-hover table-bordered table-sm text-center font-size-reduce-20 salary-distribution-table my-3' id = '{{tableId}}'>
+    <caption>{{currentPageName | translate}} {{':' | translate}} {{ 'MONEY_DISTRIBUTION_SHEET' | translate}}</caption>
     <thead>
         <tr>
             <th>{{'BRANCH' | translate}} {{':' | translate}} {{currentPageName | translate}}</th>
@@ -116,42 +117,42 @@
             <td>{{'TOTAL' | translate}}</td>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-data">
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'WORKER_NO' | translate}}"></td>
+            <td data-head="{{'CARD_NO' | translate}}"></td>
+            <td data-head="{{'NAME' | translate}}"></td>
+            <td data-head="{{'GRADE' | translate}}"></td>
             
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'JOINING_DATE' | translate}}"></td>
+            <td data-head="{{'ASSIGNED' | translate}}"></td>
+            <td data-head="{{'PRESENT' | translate}}"></td>
+            <td data-head="{{'ABSENT' | translate }}"></td>
             
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'OTHERS' | translate }}"></td>
+            <td data-head="{{'OVERTIME_HOURS' | translate}}"></td>
+            <td data-head="{{'EXTENDED_HOLIDAYS' | translate}}"></td>
+            <td data-head="{{'HOLIDAY' | translate}}"></td>
             
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'MAIN_SALARY' | translate}}"></td>
+            <td data-head="{{'HOME_RENT' | translate}}"></td>
+            <td data-head="{{'MEDICAL_COST' | translate}}"></td>
+            <td data-head="{{'TRANSPORT_COST' | translate}}"></td>
             
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'FOOD' | translate}}"></td>
+            <td data-head="{{'OTHER_COMPANY_FACILITIES' | translate}}"></td>
+            <td data-head="{{'TOTAL_SALARY' | translate}}"></td>
+            <td data-head="{{'OVERTIME_MONEY' | translate}}"></td>
             
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'HAJIRA_BONUS' | translate}}"></td>
+            <td data-head="{{'TOTAL_DISTRIBUTED' | translate}}"></td>
+            <td data-head="{{'ABSENT' | translate }}"></td>
+            <td data-head="{{'ADVANCED_OTHERS' | translate}}"></td>
             
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-head="{{'REVENUE' | translate}}"></td>
+            <td data-head="{{'TOTAL' | translate}}"></td>
+            <td data-head="{{'MONEY_RECEIVED' | translate}}"></td>
+            <td data-head="{{'SIGNATURE' | translate }}"></td>
         </tr>
     </tbody>
 </table>

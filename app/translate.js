@@ -107,6 +107,7 @@
             "TOTAL_PERSONS": "Total Persons",
             "TRANSLATE": "Translate",
             "THEME": "Theme",
+            "EXPORT": "Export",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -210,6 +211,7 @@
             "TOTAL_PERSONS": "মোট মানুষ",
             "TRANSLATE": "অনুবাদ",
             "THEME": "থিম",
+            "EXPORT": "রপ্তানি",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');

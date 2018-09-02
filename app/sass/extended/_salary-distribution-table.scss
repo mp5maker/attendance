@@ -1,0 +1,50 @@
+h4.table-header{
+    text-align: center;
+}
+
+// Remove the sidebar
+@media screen 
+and (max-width: 1890px){
+    .wrapper-sidebar{
+        display: none !important;
+    }
+}
+
+//Remove the header
+@media screen 
+and (max-width: 1690px){
+    .header-template{
+        display: none !important;
+    }
+    h4.table-header{
+        text-align: left !important;
+        margin-top: 5rem;
+    }
+    table.salary-distribution-table{
+        border: none;
+        thead, tbody, tr, td, th{
+            border: none;
+        }
+        thead{
+            tr{
+                display: none;
+            }
+        }
+        tbody.table-data{
+            tr{
+                td{
+                    display: block;
+                    position: relative;
+                    padding-right: 100%;
+                    margin-bottom: 1rem;
+                }
+                td:after{
+                    position: absolute;
+                    content: attr(data-head);
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+

@@ -9793,6 +9793,35 @@ a.text-dark:hover, a.text-dark:focus {
 .box-shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
 
+h4.table-header {
+  text-align: center; }
+
+@media screen and (max-width: 1890px) {
+  .wrapper-sidebar {
+    display: none !important; } }
+
+@media screen and (max-width: 1690px) {
+  .header-template {
+    display: none !important; }
+  h4.table-header {
+    text-align: left !important;
+    margin-top: 5rem; }
+  table.salary-distribution-table {
+    border: none; }
+    table.salary-distribution-table thead, table.salary-distribution-table tbody, table.salary-distribution-table tr, table.salary-distribution-table td, table.salary-distribution-table th {
+      border: none; }
+    table.salary-distribution-table thead tr {
+      display: none; }
+    table.salary-distribution-table tbody.table-data tr td {
+      display: block;
+      position: relative;
+      padding-right: 100%;
+      margin-bottom: 1rem; }
+    table.salary-distribution-table tbody.table-data tr td:after {
+      position: absolute;
+      content: attr(data-head);
+      white-space: nowrap; } }
+
 .dark .border-primary {
   border-color: #263238 !important; }
 
