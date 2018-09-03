@@ -2,7 +2,7 @@
     "use strict";
     
     angular.module('attendance')
-        .controller('mainCtrl', function ($scope, excelFactory, $timeout){
+        .controller('mainCtrl', function ($scope, excelFactory, $timeout, shepherdFactory){
             $scope.theme = 'dark';
             $scope.language = 'en';
             $scope.logoSrc = "app/images/logo/logo.png";
@@ -55,6 +55,59 @@
             // Get the Current page name
             $scope.$on('currentPageName', function(event, data){
                 $scope.currentPageName = data;
+            });
+
+            // Applying Shepherd Factory
+            const tour = new shepherdFactory.Tour({
+                defaults: {
+                    classes: 'shepherd-theme-arrows',
+                    scrollTo: true,
+                }
+            });
+
+            var tourButtonOptions = [
+                {
+                    text: 'Back',
+                    classes: 'shepherd-custom-button-secondary',
+                    action: tour.back,
+                },
+                {
+                    text: 'Next',
+                    classes: 'shepherd-button-primary',
+                    action: tour.next,
+                },
+                {
+                    text: 'Exit',
+                    classes: 'shepherd-custom-button-danger',
+                    action: function () {
+                        return tour.cancel();
+                    }
+                }
+            ]
+
+            tour.addStep('tour', {
+                title: 'Heading',
+                text: 'Your Website Name',
+                attachTo: ".heading-shepherd bottom",
+                buttons: tourButtonOptions
+            });
+
+            tour.addStep('tour', {
+                title: "Brand Name",
+                text: "Your brand logo",
+                attachTo: ".brand-shepherd bottom",
+                buttons: tourButtonOptions,
+            });
+
+            $scope.startGuide = function(){
+                tour.start();
+            }
+
+            angular.element(document.onkeydown = function(event){
+                event = event || window.event;
+                if(event.keyCode == 27){
+                    tour.cancel();
+                }
             });
     });
 })();

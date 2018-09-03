@@ -108,6 +108,7 @@
             "TRANSLATE": "Translate",
             "THEME": "Theme",
             "EXPORT": "Export",
+            "GUIDE_TOUR": "Guide Tour",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -212,6 +213,7 @@
             "TRANSLATE": "অনুবাদ",
             "THEME": "থিম",
             "EXPORT": "রপ্তানি",
+            "GUIDE_TOUR": "গাইড",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');

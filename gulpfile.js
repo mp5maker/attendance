@@ -42,6 +42,9 @@ var librariesjs = [
 
     // Bootstrap JS
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
+
+    // Shepherd JS
+    'node_modules/shepherd.js/dist/js/shepherd.min.js'
 ];
 
 // Concat and Minify all the Javascript Libraries
@@ -55,6 +58,7 @@ gulp.task('libraryjs', function(){
 // All the CSS Libraries
 var librariescss = [
     'node_modules/font-awesome/css/font-awesome.css',
+    'node_modules/shepherd.js/dist/css/shepherd-theme-arrows.css'
 ];
 
 /**

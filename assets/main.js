@@ -231,6 +231,7 @@
             "TRANSLATE": "Translate",
             "THEME": "Theme",
             "EXPORT": "Export",
+            "GUIDE_TOUR": "Guide Tour",
         });
         $translateProvider.translations('bn', {
             "0": "০",
@@ -335,31 +336,12 @@
             "TRANSLATE": "অনুবাদ",
             "THEME": "থিম",
             "EXPORT": "রপ্তানি",
+            "GUIDE_TOUR": "গাইড",
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');
     });
 })();
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .factory('excelFactory', function ($window) {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
-                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
-                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
-            return {
-                    tableToExcel: function (tableId, worksheetName) {
-                        var table = $("#" + tableId),
-                            ctx = { worksheet: worksheetName, table: table.html() },
-                            href = uri + base64(format(template, ctx));
-                        return href;
-                }
-            };
-        })
-})();
-
 (function(){
     'use strict';
     
@@ -462,7 +444,7 @@
     "use strict";
     
     angular.module('attendance')
-        .controller('mainCtrl', function ($scope, excelFactory, $timeout){
+        .controller('mainCtrl', function ($scope, excelFactory, $timeout, shepherdFactory){
             $scope.theme = 'dark';
             $scope.language = 'en';
             $scope.logoSrc = "app/images/logo/logo.png";
@@ -515,6 +497,59 @@
             // Get the Current page name
             $scope.$on('currentPageName', function(event, data){
                 $scope.currentPageName = data;
+            });
+
+            // Applying Shepherd Factory
+            const tour = new shepherdFactory.Tour({
+                defaults: {
+                    classes: 'shepherd-theme-arrows',
+                    scrollTo: true,
+                }
+            });
+
+            var tourButtonOptions = [
+                {
+                    text: 'Back',
+                    classes: 'shepherd-custom-button-secondary',
+                    action: tour.back,
+                },
+                {
+                    text: 'Next',
+                    classes: 'shepherd-button-primary',
+                    action: tour.next,
+                },
+                {
+                    text: 'Exit',
+                    classes: 'shepherd-custom-button-danger',
+                    action: function () {
+                        return tour.cancel();
+                    }
+                }
+            ]
+
+            tour.addStep('tour', {
+                title: 'Heading',
+                text: 'Your Website Name',
+                attachTo: ".heading-shepherd bottom",
+                buttons: tourButtonOptions
+            });
+
+            tour.addStep('tour', {
+                title: "Brand Name",
+                text: "Your brand logo",
+                attachTo: ".brand-shepherd bottom",
+                buttons: tourButtonOptions,
+            });
+
+            $scope.startGuide = function(){
+                tour.start();
+            }
+
+            angular.element(document.onkeydown = function(event){
+                event = event || window.event;
+                if(event.keyCode == 27){
+                    tour.cancel();
+                }
             });
     });
 })();
@@ -751,6 +786,17 @@
     "use strict";
 
     angular.module('attendance')
+    .directive('shepherdSelector', function(){
+        return{
+            restrict: "E",
+            templateUrl: "app/templates/utilities/shepherd-selector.html"
+        }
+    });
+})();
+(function(){
+    "use strict";
+
+    angular.module('attendance')
     .directive('sidebarTemplate', function(){
         return{
             restrict: "E",
@@ -779,6 +825,37 @@
             restrict: "E",
             templateUrl: "app/templates/utilities/theme-selector.html"
         }
+    });
+})();
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .factory('excelFactory', function ($window) {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+                base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
+                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
+            return {
+                    tableToExcel: function (tableId, worksheetName) {
+                        var table = $("#" + tableId),
+                            ctx = { worksheet: worksheetName, table: table.html() },
+                            href = uri + base64(format(template, ctx));
+                        return href;
+                }
+            };
+        })
+})();
+
+(function(){
+    "use strict";
+
+    angular.module('attendance')
+    .factory('shepherdFactory', function ($window) {
+        if (!$window.Shepherd) {
+            console.log('Shepherd cannot be loaded');
+        }
+        return $window.Shepherd;
     });
 })();
 (function(){   
