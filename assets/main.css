@@ -9842,6 +9842,22 @@ h4.table-header {
       left: -50%;
       text-align: left; } }
 
+.spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  border-top-color: coral;
+  animation: spinner 0.7s linear infinite; }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
+
 .dark .border-primary {
   border-color: #263238 !important; }
 
