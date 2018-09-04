@@ -2,7 +2,7 @@
     "use strict";
     
     angular.module('attendance')
-        .controller('mainCtrl', function ($scope, excelFactory, $timeout, shepherdFactory){
+        .controller('mainCtrl', function ($scope, excelFactory, $timeout, shepherdFactory, tours){
             $scope.theme = 'dark';
             $scope.language = 'en';
             $scope.logoSrc = "app/images/logo/logo.png";
@@ -65,6 +65,7 @@
                 }
             });
 
+            // Button Options for Shepherd JS
             var tourButtonOptions = [
                 {
                     text: 'Back',
@@ -85,19 +86,15 @@
                 }
             ]
 
-            tour.addStep('tour', {
-                title: 'Heading',
-                text: 'Your Website Name',
-                attachTo: ".heading-shepherd bottom",
-                buttons: tourButtonOptions
-            });
-
-            tour.addStep('tour', {
-                title: "Brand Name",
-                text: "Your brand logo",
-                attachTo: ".brand-shepherd bottom",
-                buttons: tourButtonOptions,
-            });
+            // Looping through the number of guides
+            for(var i = 0; i < tours.length; i++){
+                tour.addStep('tour', {
+                    title: tours[i].heading,
+                    text: tours[i].text,
+                    attachTo: tours[i].attachTo,
+                    buttons: tourButtonOptions
+                });
+            }
 
             $scope.startGuide = function(){
                 tour.start();
