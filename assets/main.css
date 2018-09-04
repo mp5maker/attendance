@@ -9766,8 +9766,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .sticky-utility-bar {
   position: absolute;
-  top: 40%;
-  right: 0%; }
+  top: 50%;
+  right: 5%; }
   .sticky-utility-bar .sticky-utility, .sticky-utility-bar .sticky-utility-button {
     opacity: 0.8;
     z-index: -10; }
