@@ -9871,6 +9871,15 @@ h4.table-header {
   left: 0;
   cursor: pointer; }
 
+.shepherd-active:before {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  font-size: 24px;
+  opacity: 0.6;
+  content: "Press ESC to Cancel"; }
+
 /* Custom Button Colors for the shepherd */
 /* Secondary color */
 .shepherd-element .shepherd-content footer .shepherd-buttons li .shepherd-button.shepherd-custom-button-secondary {

@@ -549,7 +549,7 @@
             // Looping through the number of guides
             for(var i = 0; i < tours.length; i++){
                 tour.addStep('tour', {
-                    title: tours[i].heading,
+                    title: tours[i].title,
                     text: tours[i].text,
                     attachTo: tours[i].attachTo,
                     buttons: tourButtonOptions
