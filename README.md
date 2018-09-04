@@ -1,42 +1,44 @@
-# Factory Using Fingerprint Reader #
+# Factory Fingerprint Attendance #
+![Attendance](favicon.ico "www.sphotonkhan.com")
 
-## Use NPM Install ##
+## Get Started ##
+```bash
+npm install
+composer dump-autoload
+```
+### Libraries Used ###
 
 **Angular JS**
-npm install angular-js
-npm install angular-ui-router
-npm install angular-messages
-npm install angular-resource
-npm install angular-animate
-npm install angular-translate
+* angular-js
+* angular-ui-router
+* angular-messages
+* angular-resource
+* angular-animate
+* angular-translate
 
 **JQuery**
-npm install popper.js@1.14.3
+* jquery@^1.9.1
 
 **Popper JS**
-npm install jquery@1.9.1
+* popper.js@^1.14.3
+
+**Shepherd JS**
+* shepherd.js
 
 **Styling**
-npm install font-awesome
-npm install bootstrap 
-
-**Sass**
-npm install -g sass
+* font-awesome
+* bootstrap 
+* sass
 
 **Gulp**
-npm install gulp 
-npm install gulp-concat
-npm install gulp-imagemin
-npm install gulp-sass
-npm install gulp-uglify
-npm install gulp-watch
-
-
-## Composer For the  PHP Namespace ##
-composer dump autoload
+* gulp 
+* gulp-concat
+* gulp-imagemin
+* gulp-sass
+* gulp-uglify
+* gulp-watch
 
 Thanks for watching this project
-
 If you want to check my other projects, please click on the links below
 
 Websites | URL | Status
