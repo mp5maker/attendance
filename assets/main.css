@@ -9826,6 +9826,13 @@ h4.table-header {
         white-space: nowrap;
         left: -50%; } }
 
+.table-data.ng-enter {
+  transition: all linear 1s;
+  opacity: 0; }
+
+.table-data.ng-enter-active {
+  opacity: 1; }
+
 @media screen and (max-width: 730px) {
   .overall-table {
     border: none; }

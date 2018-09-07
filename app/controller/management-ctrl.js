@@ -23,6 +23,8 @@
                     $scope.employeeData = data;
                  });
             }
-            get();
+            $timeout(function(){
+                get();
+            },2000);
         });
 })();

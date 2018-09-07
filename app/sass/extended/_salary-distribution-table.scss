@@ -56,3 +56,11 @@ and (max-width: 1690px){
     }
 }
 
+.table-data.ng-enter{
+    transition: all linear 1s;
+    opacity: 0;
+}
+
+.table-data.ng-enter-active{
+    opacity: 1;
+}
