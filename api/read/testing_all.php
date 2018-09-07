@@ -13,9 +13,9 @@ use \Model\Testing as Testing;
 $params = ['select_type' => 'all'];
 $fetchedArray = Testing::read($params);
 for($i = 0; $i < count($fetchedArray); $i++):
-    $data[] = ['id' => $fetchedArray[$i], 
-                'somecol' => $fetchedArray[$i], 
-                'somecol2' => $fetchedArray[$i]
+    $data[] = ['id' => $fetchedArray[$i][0], 
+                'somecol' => $fetchedArray[$i][1], 
+                'somecol2' => $fetchedArray[$i][2]
             ];
 endfor;
 echo json_encode($data, JSON_PRETTY_PRINT);
