@@ -2,6 +2,12 @@ h4.table-header{
     text-align: center;
 }
 
+.salary-distribution-table.table-sm{
+    td, th{
+        padding: 1px;
+    }
+}
+
 // Remove the sidebar
 @media screen 
 and (max-width: 1890px){
@@ -37,12 +43,13 @@ and (max-width: 1690px){
                     display: block;
                     margin-bottom: 1rem;
                     left: 50%;
-                }
-                td:after{
-                    position: absolute;
-                    content: attr(data-head);
-                    white-space: nowrap;
-                    left: -50%;
+                    &:after{
+                        position: absolute;
+                        content: attr(data-head);
+                        // text-align: right !important;
+                        white-space: nowrap;
+                        left: -50%;
+                    }
                 }
             }
         }

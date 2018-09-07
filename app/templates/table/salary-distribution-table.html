@@ -1,7 +1,7 @@
 <h4 class = 'table-header'>{{currentPageName | translate}} {{':' | translate}} {{ 'MONEY_DISTRIBUTION_SHEET' | translate}}</h4>
-<table class = 'table table-hover table-bordered table-sm text-center font-size-reduce-20 salary-distribution-table my-3' id = '{{tableId}}'>
+<table class = 'table table-hover table-bordered table-sm font-size-reduce-20 salary-distribution-table my-3' id = '{{tableId}}'>
     <caption>{{currentPageName | translate}} {{':' | translate}} {{ 'MONEY_DISTRIBUTION_SHEET' | translate}}</caption>
-    <thead>
+    <thead class="text-center">
         <tr>
             <th>{{'BRANCH' | translate}} {{':' | translate}} {{currentPageName | translate}}</th>
             <th></th>
@@ -44,7 +44,7 @@
             <th></th>
         </tr>
     </thead>
-    <thead>
+    <thead class="text-center">
         <tr>
             <td rowspan = '2'>
                 {{'WORKER_NO' | translate}}
