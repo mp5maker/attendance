@@ -3,9 +3,10 @@
     <button class="btn btn-success" ng-click="exportToExcel(tableId, worksheetName)">
         <i class="fa fa-file-excel-o"></i>
     </button>
-    <salary-distribution-table  print-section table-id='tableId' 
+    <salary-distribution-table  print-section table-id='tableId'
+                                employee-data="employeeData" 
                                 current-page-name = 'currentPageName'
                                 language='language'>
     </salary-distribution-table>
-    <div class="spinner text-center d-none d-xl-block"></div>
+    <div class="spinner text-center d-none d-xl-block" ng-hide="employeeData"></div>
 </div>

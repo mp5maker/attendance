@@ -8,7 +8,8 @@
                 scope: {
                     "tableId": "=",
                     "language": "=",
-                    "currentPageName": "="
+                    "currentPageName": "=",
+                    "employeeData": "="
                 },
                 templateUrl: "app/templates/table/salary-distribution-table.html"
             }

@@ -117,14 +117,24 @@
             <td>{{'TOTAL' | translate}}</td>
         </tr>
     </thead>
-    <tbody class="table-data">
+    <tbody class="table-data" ng-repeat="employee in employeeData">
         <tr>
-            <td data-head="{{'WORKER_NO' | translate}}"></td>
-            <td data-head="{{'CARD_NO' | translate}}"></td>
-            <td data-head="{{'NAME' | translate}}"></td>
-            <td data-head="{{'GRADE' | translate}}"></td>
+            <td data-head="{{'WORKER_NO' | translate}}">
+                <span>{{ employee.id }}</span>
+            </td>
+            <td data-head="{{'CARD_NO' | translate}}">
+                <span>{{ employee.card_no }}</span>
+            </td>
+            <td data-head="{{'NAME' | translate}}">
+                <span>{{ employee.fullname }}</span>
+            </td>
+            <td data-head="{{'GRADE' | translate}}">
+                <span>{{ employee.grade }}</span>
+            </td>
             
-            <td data-head="{{'JOINING_DATE' | translate}}"></td>
+            <td data-head="{{'JOINING_DATE' | translate}}">
+                <span>{{ employee.joining_date }}</span>
+            </td>
             <td data-head="{{'ASSIGNED' | translate}}"></td>
             <td data-head="{{'PRESENT' | translate}}"></td>
             <td data-head="{{'ABSENT' | translate }}"></td>
@@ -134,14 +144,28 @@
             <td data-head="{{'EXTENDED_HOLIDAYS' | translate}}"></td>
             <td data-head="{{'HOLIDAY' | translate}}"></td>
             
-            <td data-head="{{'MAIN_SALARY' | translate}}"></td>
-            <td data-head="{{'HOME_RENT' | translate}}"></td>
-            <td data-head="{{'MEDICAL_COST' | translate}}"></td>
-            <td data-head="{{'TRANSPORT_COST' | translate}}"></td>
+            <td data-head="{{'MAIN_SALARY' | translate}}">
+                <span>{{ employee.main_salary }}</span>
+            </td>
+            <td data-head="{{'HOME_RENT' | translate}}">
+                <span>{{ employee.home_rent }}</span>
+            </td>
+            <td data-head="{{'MEDICAL_COST' | translate}}">
+                <span>{{ employee.medical_cost }}</span>
+            </td>
+            <td data-head="{{'TRANSPORT_COST' | translate}}">
+                <span>{{ employee.transport_cost }}</span>
+            </td>
             
-            <td data-head="{{'FOOD' | translate}}"></td>
-            <td data-head="{{'OTHER_COMPANY_FACILITIES' | translate}}"></td>
-            <td data-head="{{'TOTAL_SALARY' | translate}}"></td>
+            <td data-head="{{'FOOD' | translate}}">
+                <span>{{ employee.food_cost }}</span>
+            </td>
+            <td data-head="{{'OTHER_COMPANY_FACILITIES' | translate}}">
+                <span>{{ employee.other_company_facilities }}</span> 
+            </td>
+            <td data-head="{{'TOTAL_SALARY' | translate}}">
+                <span>{{ employee.total_salary }}</span>
+            </td>
             <td data-head="{{'OVERTIME_MONEY' | translate}}"></td>
             
             <td data-head="{{'HAJIRA_BONUS' | translate}}"></td>

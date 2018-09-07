@@ -122,6 +122,354 @@
     .run(function(){});
 })();
 (function(){
+    'use strict';
+    
+    angular.module('attendance')
+    .controller('adminStaffCtrl', function($scope){
+        $scope.tableId = 'admin-staff-table';
+        $scope.worksheetName = 'management-money-distribution-sheet';
+        $scope.currentPageName = 'ADMIN_STAFF';
+
+        // Emitting the Values
+        $scope.$emit('tableId', $scope.tableId);
+        $scope.$emit('worksheetName', $scope.worksheetName);
+        $scope.$emit('currentPageName', $scope.currentPageName);
+    });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('attendanceCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('cuttingCtrl', function ($scope) {
+            $scope.tableId = 'cutting-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'CUTTING';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        }); 
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('finishingCtrl', function ($scope) {
+            $scope.tableId = 'finishing-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = "FINISHING";
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('homeCtrl', function ($scope) {
+
+        });
+})();
+
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+    .controller('languageSelectorCtrl', function($scope, $translate){
+        $scope.languageEnglish = function () {
+            $scope.$emit('languageChanged', 'en');
+            $translate.use('en')
+        };
+        
+        $scope.languageBengali = function () {
+            $scope.$emit('languageChanged', 'bn');
+            $translate.use('bn');
+        };
+    });
+})();
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('loaderCleanerCtrl', function ($scope) {
+            $scope.tableId = 'loader-cleaner-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = "LOADER_CLEANER";
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        });
+})();
+
+(function(){
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('mainCtrl', function ($scope, excelFactory, $timeout, shepherdFactory, tours){
+            $scope.theme = 'dark';
+            $scope.language = 'en';
+            $scope.logoSrc = "app/images/logo/logo.png";
+            $scope.sidebarHide = false;
+
+            $scope.$on('themeChanged', function($event, message){
+                $scope.theme = message;
+            });
+
+            $scope.$on('languageChanged', function($event, message){
+                $scope.language = message;
+            });
+
+            $scope.exportToExcel = function (tableId, sheetName) { 
+                var exportHref = excelFactory.tableToExcel(tableId, sheetName);
+                $timeout(function () { 
+                    var a = document.createElement('a');
+                    a.href = exportHref;
+                    a.download = `${sheetName}.xls`;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                }, 100);  
+            };
+
+            $scope.sidebarToggle = function(){
+                if($scope.sidebarHide){
+                    //If the sidebar is hidden
+                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
+                    wrapper_content[0].classList.add('col');
+                    wrapper_content[0].classList.remove('col-md-11');
+                }else{
+                    //If the sidebar shows
+                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
+                    wrapper_content[0].classList.add('col-md-11');
+                    wrapper_content[0].classList.remove('col');
+                }
+            };
+            
+            // Get Table ID for the excel export
+            $scope.$on('tableId', function(event, data){
+                $scope.tableId = data;
+            });
+
+            // Get the Worksheet name
+            $scope.$on('worksheetName', function(event, data){
+                $scope.worksheetName = data;
+            });
+
+            // Get the Current page name
+            $scope.$on('currentPageName', function(event, data){
+                $scope.currentPageName = data;
+            });
+
+            // Applying Shepherd Factory
+            const tour = new shepherdFactory.Tour({
+                defaults: {
+                    classes: 'shepherd-theme-arrows',
+                    scrollTo: true,
+                }
+            });
+
+            // Button Options for Shepherd JS
+            var tourButtonOptions = [
+                {
+                    text: 'Back',
+                    classes: 'shepherd-custom-button-secondary',
+                    action: tour.back,
+                },
+                {
+                    text: 'Next',
+                    classes: 'shepherd-button-primary',
+                    action: tour.next,
+                },
+                {
+                    text: 'Exit',
+                    classes: 'shepherd-custom-button-danger',
+                    action: function () {
+                        return tour.cancel();
+                    }
+                }
+            ]
+
+            // Looping through the number of guides
+            for(var i = 0; i < tours.length; i++){
+                tour.addStep('tour', {
+                    title: tours[i].title,
+                    text: tours[i].text,
+                    attachTo: tours[i].attachTo,
+                    buttons: tourButtonOptions
+                });
+            }
+
+            $scope.startGuide = function(){
+                tour.start();
+            }
+
+            angular.element(document.onkeydown = function(event){
+                event = event || window.event;
+                if(event.keyCode == 27){
+                    tour.cancel();
+                }
+            });
+    });
+})();
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('managementCtrl', function ($scope, apiHelperFactory, $timeout) {
+            $scope.tableId = 'management-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'MANAGEMENT';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+
+            var get = function(){
+                apiHelperFactory.allEmployee().then(function(response){
+                    var data = response.data;
+                    angular.forEach(data, function(value){
+                        value.total_salary = parseInt(value.main_salary) + parseInt(value.home_rent) +
+                            parseInt(value.medical_cost) + parseInt(value.transport_cost);
+                            parseInt(value.food_cost) + parseInt(value.other_company_facilities);
+                    });
+                    $scope.employeeData = data;
+                 });
+            }
+            get();
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('productionStaffCtrl', function ($scope) {
+            $scope.tableId = 'production-staff-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = "PRODUCTION_STAFF";
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('qualityCtrl', function ($scope) {
+            $scope.tableId = 'quality-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'QUALITY';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('settingsCtrl', function ($scope) {
+
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('sewingHelperCtrl', function ($scope) {
+            $scope.tableId = 'sewing-helper-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'SEWING_HELPER';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        });
+})();
+
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('sewingOperatorCtrl', function ($scope) {
+            $scope.tableId = 'sewing-operator-table';
+            $scope.worksheetName = 'management-money-distribution-sheet';
+            $scope.currentPageName = 'SEWING_OPERATOR';
+
+            // Emitting the Values
+            $scope.$emit('tableId', $scope.tableId);
+            $scope.$emit('worksheetName', $scope.worksheetName);
+            $scope.$emit('currentPageName', $scope.currentPageName);
+        });
+})();
+
+(function(){
+    "use strict";
+
+    angular.module('attendance')
+        .controller('stickyUtilityBarCtrl', function($scope){
+            $scope.stickyHide = true;
+        });
+})();
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('themeSelectorCtrl', function ($scope) {
+            $scope.themeDark = function () {
+                $scope.$emit('themeChanged', 'dark');
+            };
+            $scope.themeLight = function () {
+                $scope.$emit('themeChanged', 'light');
+            };
+        });
+})();
+(function () {
+    "use strict";
+    
+    angular.module('attendance')
+        .controller('totalSalaryCtrl', function ($scope) {
+
+        });
+})();
+
+(function(){
+    "use strict";
+
+    angular.module('attendance')
+    .constant('apiRoutes', {
+        "employeeAll": "api/read/employee_all.php",
+    });
+})();
+(function(){
     "use strict";
 
     angular.module('attendance')
@@ -464,7 +812,8 @@
                 scope: {
                     "tableId": "=",
                     "language": "=",
-                    "currentPageName": "="
+                    "currentPageName": "=",
+                    "employeeData": "="
                 },
                 templateUrl: "app/templates/table/salary-distribution-table.html"
             }
@@ -544,332 +893,19 @@
     });
 })();
 (function(){
-    'use strict';
-    
-    angular.module('attendance')
-    .controller('adminStaffCtrl', function($scope){
-        $scope.tableId = 'admin-staff-table';
-        $scope.worksheetName = 'management-money-distribution-sheet';
-        $scope.currentPageName = 'ADMIN_STAFF';
-
-        // Emitting the Values
-        $scope.$emit('tableId', $scope.tableId);
-        $scope.$emit('worksheetName', $scope.worksheetName);
-        $scope.$emit('currentPageName', $scope.currentPageName);
-    });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('attendanceCtrl', function ($scope) {
-
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('cuttingCtrl', function ($scope) {
-            $scope.tableId = 'cutting-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = 'CUTTING';
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        }); 
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('finishingCtrl', function ($scope) {
-            $scope.tableId = 'finishing-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = "FINISHING";
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('homeCtrl', function ($scope) {
-
-        });
-})();
-
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-    .controller('languageSelectorCtrl', function($scope, $translate){
-        $scope.languageEnglish = function () {
-            $scope.$emit('languageChanged', 'en');
-            $translate.use('en')
-        };
-        
-        $scope.languageBengali = function () {
-            $scope.$emit('languageChanged', 'bn');
-            $translate.use('bn');
-        };
-    });
-})();
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('loaderCleanerCtrl', function ($scope) {
-            $scope.tableId = 'loader-cleaner-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = "LOADER_CLEANER";
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function(){
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('mainCtrl', function ($scope, excelFactory, $timeout, shepherdFactory, tours){
-            $scope.theme = 'dark';
-            $scope.language = 'en';
-            $scope.logoSrc = "app/images/logo/logo.png";
-            $scope.sidebarHide = false;
-
-            $scope.$on('themeChanged', function($event, message){
-                $scope.theme = message;
-            });
-
-            $scope.$on('languageChanged', function($event, message){
-                $scope.language = message;
-            });
-
-            $scope.exportToExcel = function (tableId, sheetName) { 
-                var exportHref = excelFactory.tableToExcel(tableId, sheetName);
-                $timeout(function () { 
-                    var a = document.createElement('a');
-                    a.href = exportHref;
-                    a.download = `${sheetName}.xls`;
-                    document.body.appendChild(a);
-                    a.click();
-                    a.remove();
-                }, 100);  
-            };
-
-            $scope.sidebarToggle = function(){
-                if($scope.sidebarHide){
-                    //If the sidebar is hidden
-                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
-                    wrapper_content[0].classList.add('col');
-                    wrapper_content[0].classList.remove('col-md-11');
-                }else{
-                    //If the sidebar shows
-                    var wrapper_content = angular.element(document.getElementById('wrapper-content-id'));
-                    wrapper_content[0].classList.add('col-md-11');
-                    wrapper_content[0].classList.remove('col');
-                }
-            };
-            
-            // Get Table ID for the excel export
-            $scope.$on('tableId', function(event, data){
-                $scope.tableId = data;
-            });
-
-            // Get the Worksheet name
-            $scope.$on('worksheetName', function(event, data){
-                $scope.worksheetName = data;
-            });
-
-            // Get the Current page name
-            $scope.$on('currentPageName', function(event, data){
-                $scope.currentPageName = data;
-            });
-
-            // Applying Shepherd Factory
-            const tour = new shepherdFactory.Tour({
-                defaults: {
-                    classes: 'shepherd-theme-arrows',
-                    scrollTo: true,
-                }
-            });
-
-            // Button Options for Shepherd JS
-            var tourButtonOptions = [
-                {
-                    text: 'Back',
-                    classes: 'shepherd-custom-button-secondary',
-                    action: tour.back,
-                },
-                {
-                    text: 'Next',
-                    classes: 'shepherd-button-primary',
-                    action: tour.next,
-                },
-                {
-                    text: 'Exit',
-                    classes: 'shepherd-custom-button-danger',
-                    action: function () {
-                        return tour.cancel();
-                    }
-                }
-            ]
-
-            // Looping through the number of guides
-            for(var i = 0; i < tours.length; i++){
-                tour.addStep('tour', {
-                    title: tours[i].title,
-                    text: tours[i].text,
-                    attachTo: tours[i].attachTo,
-                    buttons: tourButtonOptions
-                });
-            }
-
-            $scope.startGuide = function(){
-                tour.start();
-            }
-
-            angular.element(document.onkeydown = function(event){
-                event = event || window.event;
-                if(event.keyCode == 27){
-                    tour.cancel();
-                }
-            });
-    });
-})();
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('managementCtrl', function ($scope) {
-            $scope.tableId = 'management-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = 'MANAGEMENT';
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('productionStaffCtrl', function ($scope) {
-            $scope.tableId = 'production-staff-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = "PRODUCTION_STAFF";
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('qualityCtrl', function ($scope) {
-            $scope.tableId = 'quality-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = 'QUALITY';
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('settingsCtrl', function ($scope) {
-
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('sewingHelperCtrl', function ($scope) {
-            $scope.tableId = 'sewing-helper-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = 'SEWING_HELPER';
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('sewingOperatorCtrl', function ($scope) {
-            $scope.tableId = 'sewing-operator-table';
-            $scope.worksheetName = 'management-money-distribution-sheet';
-            $scope.currentPageName = 'SEWING_OPERATOR';
-
-            // Emitting the Values
-            $scope.$emit('tableId', $scope.tableId);
-            $scope.$emit('worksheetName', $scope.worksheetName);
-            $scope.$emit('currentPageName', $scope.currentPageName);
-        });
-})();
-
-(function(){
     "use strict";
 
     angular.module('attendance')
-        .controller('stickyUtilityBarCtrl', function($scope){
-            $scope.stickyHide = true;
-        });
+    .factory('apiHelperFactory', function(apiRoutes, $http){
+        return {
+            // Read
+            allEmployee: () =>  $http.get(apiRoutes.employeeAll),
+            // Create
+            // Update
+            // Delete 
+        }
+    })
 })();
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('themeSelectorCtrl', function ($scope) {
-            $scope.themeDark = function () {
-                $scope.$emit('themeChanged', 'dark');
-            };
-            $scope.themeLight = function () {
-                $scope.$emit('themeChanged', 'light');
-            };
-        });
-})();
-(function () {
-    "use strict";
-    
-    angular.module('attendance')
-        .controller('totalSalaryCtrl', function ($scope) {
-
-        });
-})();
-
 (function(){
     "use strict";
     
